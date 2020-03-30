@@ -28,8 +28,12 @@ Mobile first (responsive):
 
 
 ## Tasks
-1) We need to set up a front end UI that can take in an input from the user:
+
+1) After the wireframe, create the mock up 
+2) Design the HTML/CSS
+3) We need to set up a front end UI that can take in an input from the user:
     * Superhero name
-2) Once we have this search information, we will use the backend to communicate with the APIs and return back:
+4) Once we have this search information, we will use the backend to communicate with the APIs and return back:
     * Superhero information
     * Wallpapers closely related to said superhero
+5) Integrate with Javascript

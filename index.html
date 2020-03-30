@@ -3,14 +3,51 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>First Project </title>
+    <title>Superhero B&B</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.3.7/dist/css/uikit.min.css" />
+    <!-- link to our style sheet -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.3.7/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.3.7/dist/js/uikit-icons.min.js"></script>
 </head>
 
 <body>
 
     <!-- Main Header-->
-    <header>
-        <!-- h1 headline-->
-        <h1>Evolve Nation</h1>
-    </header>
+        <header>
+            <h1 style="text-align: center">Superhero Background & Backgrounds</h1>
+        </header>
+    <!-- section & container set up for UIkit -->
+    <div class="uk-section-default">
+        <div class="uk-section uk-light uk-background-cover" style="background-image: url(textBackground.png)">
+            <div class="uk-container">
+    
+                <h3>Hello! Welcome to Superhero Background & Backgrounds!</h3>
+    
+                <div class="uk-grid-match uk-child-width-1-3@m textShadow" uk-grid>
+                    <div>
+                        <p>This application will return superhero information and backgrounds to you! 
+                            Use the search form below to find these items about your favorite superhero(es)!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="uk-grid-collapse uk-child-width-expand@s uk-text-center uk-margin-large-top" uk-grid>
+        <div>
+            <p uk-margin>
+                <!-- Might need this one later
+                    <a class="uk-button uk-button-default" href="#">Link</a> -->
+                <button class="uk-button uk-button-default">Submit Search</button>
+                <!-- Maybe implement this one later
+                <button class="uk-button uk-button-default" disabled>Disabled</button> -->
+            </p>
+        </div>
+    </div>
+
+</html>
