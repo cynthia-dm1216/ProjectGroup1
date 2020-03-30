@@ -1,32 +1,35 @@
-# ProjectGroup1
+# Superhero Background & Backgrounds
 
-## Overview
-Welcome to Project 1! This is an important step in your full-stack journey as you will now use your newly acquired skills and knowledge to build web application from scratch. With your team, you will conceive and execute a design that solves a real-world problem by integrating data received from multiple server-side API requests. Because you will be working collaboratively, you will learn agile development methodologies and implement feature and bug fixes using the git branch workflow and pull requests.
+## Description
+This project will take a superhero name from the user and will return information about them, and will also return wallpapers related to the superhero.
 
-## Key Topics
-* Server-side APIs
-* Git branching workflow
-* Agile software development
+## User Story
+```
+AS a fan of superheroes that would like more information and wallpapers of them
+I WANT an app that displays information and wallpapers about a superhero I search for
+SO THAT I can read about the superhero and change my wallpaper
+```
 
-## Comprehension Check
-You will be employer-ready if you can answer the following questions:
-1. What is agile software development?
-2. What is an MVP?
-3. If you pull down a teammate's branch and you have merge conflicts, how do you handle it?
 
-## Learning Objectives
-You will be employer-competitive if you are able to:
-* Speak technically about a feature you implemented in your project
-* Explain and execute git branching workflow in a collaborative project
-* Resolve merge conflicts
-* Explain agile software development
-* Design, build, and deploy a client-side web application using GitHub Pages
-* Prepare a professional presentation and repository README for your project
+## Wireframe
+```
+Browser:
+```
+![wireframeBrowser](wireframeBrowser.png)
+```
+Mobile first (responsive):
+```
+![wireframeMobileFirst](wireframeMobileFirst.png)
 
-## Helpful Links
-* [Agile Methodology](https://en.wikipedia.org/wiki/Agile_software_development)
-* [Git Branching](https://git-scm.com/book/en/v2/Git-Branching-Branching-Workflows)
-* [Learn Enough Git to Be Dangerous](https://www.learnenough.com/git-tutorial/getting_started)
 
-- - -
-© 2019 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
+## APIs Used
+* SuperheroAPI.com
+* Wallhaven API
+
+
+## Tasks
+1) We need to set up a front end UI that can take in an input from the user:
+    * Superhero name
+2) Once we have this search information, we will use the backend to communicate with the APIs and return back:
+    * Superhero information
+    * Wallpapers closely related to said superhero
