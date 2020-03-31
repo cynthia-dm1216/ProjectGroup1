@@ -1,35 +1,58 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    --red-color: #D43131;
+    --black-color: #2E2A2A;
+}
+
+header {
+    background-color: var(--red-color);
+    width: 100%;
+}
+
+header h1 {
+    color: #f2f2f2;
+    margin-top: 20px;
+}
+
 .textShadow {
     text-shadow: 1px 1px yellow;
     color: black;
 }
-header {
-    background-color: darkslategray;
+
+#heroForm {
+    width: 500px;
+    margin-bottom: 20px;
 }
+
+#heroSearchInput {
+    width: 100%;
+    border-radius: 4px;
+    background-color: #f2f2f2;
+    border: none;
+    color: #444;
+}
+
 #bioImg {
     max-width: 200px;
     max-height: 200px;
     margin: 20px;
 }
+
 .submitBtn {
     background-color: white;
 }
+
 .superInfo {
     text-align: center;
 }
+
 .superPics {
     text-align: center;
-}
-h2 {
-    color: forestgreen;
-}
-h3 {
-    color: lime;
-}
-
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
 }
 
 #heroInfo {
@@ -43,10 +66,10 @@ h3 {
 }
 
 .heroPageNum {
-    background-color: brown;
+    background-color: var(--red-color);
     padding: 10px;
     margin: 10px !important;
-    color: white;
+    color: #f2f2f2;
     border-radius: 4px;
     cursor: pointer;
 }
@@ -55,7 +78,7 @@ h3 {
 }
 
 .heroPageNum.active {
-    background-color: white;
+    background-color: #f2f2f2;
     color: rgb(209, 35, 35);
     cursor: default;
 }
@@ -81,7 +104,9 @@ h3 {
 }
 
 .infoHeading {
-    font-size: 22px;
+    font-size: 26px;
+    color: #7c7c7c;
+    margin-bottom: 10px;
 }
 
 .infoContent {
@@ -89,13 +114,21 @@ h3 {
 }
 
 .aboutCategory {
-    padding-bottom: 40px;
+    padding: 0;
+    padding-bottom: 20px;
     margin-bottom: 10px !important;
-    border-bottom: 1px solid #c0c0c0;
+    border-bottom: 1px solid #7c7c7c;
 }
 
 .heroResult {
     display: none;
     padding: 0;
-    margin: 0;
+    margin: 0 !important;
+}
+
+
+@media only screen and (max-width: 768px) {
+    #heroForm {
+        width: 90%;
+    }
 }
