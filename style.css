@@ -78,3 +78,7 @@ h3 {
     margin-bottom: 10px !important;
     border-bottom: 1px solid #c0c0c0;
 }
+
+.heroResult {
+    display: none;
+}
