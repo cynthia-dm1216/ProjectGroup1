@@ -23,7 +23,10 @@ Mobile first (responsive):
 ![wireframeMobileFirst](wireframeMobileFirst.png)
 
 ## Mockups
+Interactive Mockup: [Interactive Mockup](https://xd.adobe.com/view/192bda5d-598a-4139-731f-c3254e11c316-6f1a/)
+
 ![Home screen](home.png)
+
 ![Result screen](searchResult.png)
 
 ## APIs Used
