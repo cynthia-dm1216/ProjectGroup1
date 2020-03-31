@@ -25,3 +25,56 @@ h2 {
 h3 {
     color: lime;
 }
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.heroPageNum {
+    background-color: brown;
+    padding: 10px;
+    margin: 10px !important;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.heroPageNum:hover {
+    background-color: rgb(209, 35, 35);
+}
+
+.heroPageNum.active {
+    background-color: white;
+    color: rgb(209, 35, 35);
+    cursor: default;
+}
+
+.heroHead {
+    margin-top: none;
+    margin-left: 20px;
+}
+
+.heroAbout {
+    margin-left: 0;
+    width: 100%;
+}
+
+.heroName {
+    font-size: 42px;
+    color: white;
+}
+
+.infoHeading {
+    font-size: 22px;
+}
+
+.infoContent {
+    color: #f2f2f2;
+}
+
+.aboutCategory {
+    padding-bottom: 40px;
+    margin-bottom: 10px !important;
+    border-bottom: 1px solid #c0c0c0;
+}

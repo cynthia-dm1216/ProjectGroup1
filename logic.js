@@ -22,7 +22,68 @@ $(document).ready(function () {
     // THEN I am presented with the information of another result
     // Get data from superhero api for multiple results
     // Render data on DOM
+    $("button").on("click", function (e) { // Change to target form and submit event when HTML is ready
+        e.preventDefault();
 
+        // Superhero API ---------WORKS!!!        
+        var queryName = "Spider-man";
+        var accessToken = "2839209799538545";
+        var queryURL = "https://superheroapi.com/api/" + accessToken + "/search/" + queryName;
+
+        jQuery.ajaxPrefilter(function (options) {
+            if (options.crossDomain && jQuery.support.cors) {
+                options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
+            }
+        });
+
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(function (response) {
+            var results = response.results;
+            if (results.length > 1) {
+                for (var i = 0; i < results.length; i++) {
+                    var hero = results[i];
+                    // Take data for each result
+                    var name = hero.name;
+                    var publisher = hero.biography.publisher;
+                    var imageUrl = hero.image.url;
+                    var fullName = hero.biography["full-name"];
+                    var birthPlace = hero.biography["place-of-birth"];
+                    var firstAppearance = hero.biography["first-appearance"];
+                    var alignment = hero.biography.alignment;
+                    var occupation = hero.work.occupation;
+                    var gender = hero.appearance.gender;
+                    var race = hero.appearance.race;
+                    var height = hero.appearance.height[0];
+                    var weight = hero.appearance.weight[0];
+                    var eyeColor = hero.appearance["eye-color"];
+                    var hairColor = hero.appearance["hair-color"];
+                    var intelligence = hero.powerstats.intelligence;
+                    var strength = hero.powerstats.strength;
+                    var speed = hero.powerstats.speed;
+                    var durability = hero.powerstats.durability;
+                    var power = hero.powerstats.power;
+                    var combat = hero.powerstats.combat;
+                    // Create a button for each result
+                    // Create divs and add classes
+                    // Add texts
+                    // Only view the first one and hide the rest (through class)
+                    // Append divs
+                }
+
+            }
+            // var searchList = response.results;
+            // for (var i = 0; i < searchList.length; i++) {
+            //     var heroName = searchList[i].name;
+            //     var imgSrc = searchList[i].image.url;
+
+            //     var heroDiv = $("<div>").append($("<h1>").text(heroName)).append($("<img>").attr("src", imgSrc));
+            //     $(".container").append(heroDiv);
+            // }
+
+        })
+    })
 
 
     // Cynthia
