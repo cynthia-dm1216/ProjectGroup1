@@ -26,7 +26,7 @@ $(document).ready(function () {
         e.preventDefault();
 
         // Superhero API ---------WORKS!!!        
-        var queryName = "Spider-man";
+        var queryName = $("#heroSearchInput").val().trim();
         var accessToken = "2839209799538545";
         var queryURL = "https://superheroapi.com/api/" + accessToken + "/search/" + queryName;
 
@@ -73,11 +73,11 @@ $(document).ready(function () {
                     // Create a button for each result
                     var newSpanButton = $("<span>").addClass("heroPageNum");
                     // Create divs and add classes
-                    var heroResultContainer = $("<div>").addClass("heroResult").attr("data-index", i + 1);
+                    var heroResultContainer = $("<div>").addClass("heroResult uk-width-1-1").attr("data-index", i + 1);
                     var heroHeadDiv = $("<div>").addClass("heroHead uk-width-1-1 uk-flex uk-flex-column");
                     var heroNameSpan = $("<span>").addClass("heroName uk-text-large");
                     var publisherSpan = $("<span>").addClass("publisher uk-text-muted");
-                    var imgEl = $("<img>").attr({ "data-src": imageUrl, "alt": name, "uk-img": "" });
+                    var imgEl = $("<img>").addClass("heroImg").attr({ "data-src": imageUrl, "alt": name, "uk-img": "" });
                     var heroAboutDiv = $("<div>").addClass("heroAbout").attr("uk-grid", "");
                     var biographyDiv = $("<div>").addClass("aboutCategory uk-flex uk-flex-column uk-width-1-2@s");
                     var biographyHeading = $("<div>").addClass("infoHeading uk-text-bold uk-text-muted");
