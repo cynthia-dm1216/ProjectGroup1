@@ -53,10 +53,12 @@ h3 {
 .heroHead {
     margin-top: none;
     margin-left: 20px;
+    margin-bottom: 10px;
 }
 
 .heroAbout {
     margin-left: 0;
+    margin-top: 20px;
     width: 100%;
 }
 
@@ -81,4 +83,5 @@ h3 {
 
 .heroResult {
     display: none;
+    margin-top: 10px;
 }
