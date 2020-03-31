@@ -18,36 +18,111 @@
 <body>
 
     <!-- Main Header-->
-        <header>
-            <h1 style="text-align: center">Superhero Background & Backgrounds</h1>
-        </header>
-    <!-- section & container set up for UIkit -->
-    <div class="uk-section-default">
-        <div class="uk-section uk-light uk-background-cover" style="background-image: url(textBackground.png)">
-            <div class="uk-container">
-    
-                <h3>Hello! Welcome to Superhero Background & Backgrounds!</h3>
-    
-                <div class="uk-grid-match uk-child-width-1-3@m textShadow" uk-grid>
-                    <div>
-                        <p>This application will return superhero information and backgrounds to you! 
-                            Use the search form below to find these items about your favorite superhero(es)!
-                        </p>
+    <header>
+        <h1 style="text-align: center">Superhero Background & Backgrounds</h1>
+        <!-- submit search 
+                    dunno how to get it centered, 
+                    not gunna waste more time on it-->
+        <form class="uk-search uk-search-large">
+            <span uk-search-icon></span>
+            <input class="uk-search-input" type="search" placeholder="Search Superhoes">
+        </form>
+        <button class="uk-button uk-button-default submitBtn">Submit</button>
+        <!-- section & container set up for UIkit -->
+        <div class="uk-section-default">
+            <div class="uk-section uk-light uk-background-cover" style="background-image: url(textBackground.png)">
+                <div class="uk-container">
+
+                    <h3>Hello! Welcome to Superhero Background & Backgrounds!</h3>
+
+                    <div class="uk-grid-match uk-child-width-1-3@m textShadow" uk-grid>
+                        <div>
+                            <p>This application will return superhero information and backgrounds to you!
+                                Use the search form below to find these items about your favorite superhero(es)!
+                            </p>
+                        </div>
                     </div>
+
                 </div>
             </div>
         </div>
-    </div>
-    <div class="uk-grid-collapse uk-child-width-expand@s uk-text-center uk-margin-large-top" uk-grid>
-        <div>
-            <p uk-margin>
-                <!-- Might need this one later
-                    <a class="uk-button uk-button-default" href="#">Link</a> -->
-                <button class="uk-button uk-button-default">Submit Search</button>
-                <!-- Maybe implement this one later
-                <button class="uk-button uk-button-default" disabled>Disabled</button> -->
-            </p>
+    </header>
+    <div uk-grid>
+        <div class="uk-width-1-1 uk-text-center">
+            <h2>Superhero Name Goes Here!</h2>
+            <h3>Brand Name Goes Here!</h3>
+            <img src="bioTest.jpg" alt="bioImage" id="bioImg" />
+            <div class="uk-width-1-3"></div>
+            <h3>Biography</h3>
+            <div id="heroName">
+                Full name:
+            </div>
+            <div id="heroBirth">
+                Birth place:
+            </div>
+            <div id="heroAppear">
+                First appearance:
+            </div>
+            <div id="heroAlign">
+                Alignment:
+            </div>
+            <div id="heroOccu">
+                Occupation:
+            </div>
+        </div>
+        <div class="uk-flex-bottom uk-width-1-2  uk-text-center">
+            <h3>Appearance</h3>
+            <div id="heroGender">
+                Gender:
+            </div>
+            <div id="heroRace">
+                Race:
+            </div>
+            <div id="heroHeight">
+                Height:
+            </div>
+            <div id="heroWeight">
+                Weight:
+            </div>
+            <div id="heroEye">
+                Eye color:
+            </div>
+            <div id="heroHair">
+                Hair color:
+            </div>
+        </div>
+        <div class="uk-flex-bottom uk-width-1-2  uk-text-center">
+            <h3>Power stats</h3>
+            <div id="heroIntel">
+                Intelligence:
+            </div>
+            <div id="heroStr">
+                Strength:
+            </div>
+            <div id="heroSpeed">
+                Speed:
+            </div>
+            <div id="heroDura">
+                Durability:
+            </div>
+            <div id="heroPower">
+                Power:
+            </div>
+            <div id="heroCombat">
+                Combat:
+            </div>
         </div>
     </div>
+    </div>
+    <div uk-grid>
+        <div class="uk-width-expand@m superPics">
+            <h2>Wallpapers</h2>
+            <img src="wallTest.jpg" alt="imageTest1" />
+            <img src="wallTest2.jpg" alt="imageTest2" />
+            <img src="wallTest3.jpg" alt="imageTest3" />
+            <img src="wallTest4.jpg" alt="imageTest4" />
+        </div>
+    </div>
+
 
 </html>
