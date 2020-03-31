@@ -20,9 +20,6 @@
     <!-- My JS file -->
     <script src="logic.js"></script>
 
-    <style>
-
-    </style>
 </head>
 
 <body>
@@ -30,35 +27,151 @@
     <!-- Main Header-->
     <header>
         <h1 style="text-align: center">Superhero Background & Backgrounds</h1>
-    </header>
-    <!-- section & container set up for UIkit -->
-    <div class="uk-section-default">
-        <div class="uk-section uk-light uk-background-cover" style="background-image: url(textBackground.png)">
-            <div class="uk-container">
+        <!-- submit search 
+                    dunno how to get it centered, 
+                    not gunna waste more time on it-->
+        <form class="uk-search uk-search-large">
+            <span uk-search-icon></span>
+            <input class="uk-search-input" type="search" placeholder="Search Superhoes">
+        </form>
+        <button class="uk-button uk-button-default submitBtn">Submit</button>
+        <!-- section & container set up for UIkit -->
+        <div class="uk-section-default">
+            <div class="uk-section uk-light uk-background-cover" style="background-image: url(textBackground.png)">
+                <div class="uk-container">
 
-                <h3>Hello! Welcome to Superhero Background & Backgrounds!</h3>
+                    <h3>Hello! Welcome to Superhero Background & Backgrounds!</h3>
 
-                <div class="uk-grid-match uk-child-width-1-3@m textShadow" uk-grid>
-                    <div>
-                        <p>This application will return superhero information and backgrounds to you!
-                            Use the search form below to find these items about your favorite superhero(es)!
-                        </p>
+                    <div class="uk-grid-match uk-child-width-1-3@m textShadow" uk-grid>
+                        <div>
+                            <p>This application will return superhero information and backgrounds to you!
+                                Use the search form below to find these items about your favorite superhero(es)!
+                            </p>
+                        </div>
                     </div>
+
                 </div>
             </div>
         </div>
-    </div>
-    <div class="uk-grid-collapse uk-child-width-expand@s uk-text-center uk-margin-large-top" uk-grid>
-        <div>
-            <p uk-margin>
-                <!-- Might need this one later
-                    <a class="uk-button uk-button-default" href="#">Link</a> -->
-                <button class="uk-button uk-button-default">Submit Search</button>
-                <!-- Maybe implement this one later
-                <button class="uk-button uk-button-default" disabled>Disabled</button> -->
-            </p>
+    </header>
+    <div id="heroInfo" class="uk-background-secondary" uk-grid>
+        <div class="heroPagination uk-width-1-1 uk-child-width-expand uk-margin-remove uk-flex uk-flex-center uk-text-center uk-text-bold">
+            <span class="heroPageNum active">1</span>
+            <span class="heroPageNum">2</span>
+            <span class="heroPageNum">3</span>
+        </div>
+        <div class="heroHead uk-width-1-1 uk-flex uk-flex-column">
+            <span class="heroName uk-text-large">Spiderman</span>
+            <span class="publisher uk-text-muted">Marvel Comics</span>
+        </div>
+        <img data-src="https://cdn.gamer-network.net/2018/usgamer/SpiderMan-PS4-Header-06.jpg/EG11/thumbnail/1920x1080/format/jpg/quality/65/17-12-2018-spider-man-ps4-guide-tips-controls-photo-mode-difficulty.jpg"
+            alt="Spiderman" uk-img>
+        <div class="heroAbout" uk-grid>
+            <div class="aboutCategory uk-flex uk-flex-column uk-width-1-2@s">
+                <div class="infoHeading uk-text-bold uk-text-muted">Biography</div>
+                <div class="infoContent"><strong>Full name: </strong>Peter Parker</div>
+                <div class="infoContent"><strong>Birth place: </strong>New York, New York</div>
+                <div class="infoContent"><strong>First appearance: </strong>Amazing Fantasy</div>
+                <div class="infoContent"><strong>Alignment: </strong>Good</div>
+                <div class="infoContent"><strong>Occupation: </strong>Freelance photographer, teacher</div>
+            </div>
+            <div class="aboutCategory flex uk-flex-column uk-width-1-4@s uk-width-1-2">
+                <div class="infoHeading uk-text-bold uk-text-muted">Appearance</div>
+                <div class="infoContent"><strong>Gender: </strong>Male</div>
+                <div class="infoContent"><strong>Race: </strong>Human</div>
+                <div class="infoContent"><strong>Height: </strong>5'10"</div>
+                <div class="infoContent"><strong>Weight: </strong>165 lb</div>
+                <div class="infoContent"><strong>Eye color: </strong>Hazel</div>
+                <div class="infoContent"><strong>Hair color: </strong>Brown</div>
+            </div>
+            <div class="aboutCategory uk-flex uk-flex-column uk-width-1-4@s uk-width-1-2">
+                <div class="infoHeading uk-text-bold uk-text-muted">Power stats</div>
+                <div class="infoContent"><strong>Intelligence: </strong>90</div>
+                <div class="infoContent"><strong>Strength: </strong>55</div>
+                <div class="infoContent"><strong>Speed: </strong>67</div>
+                <div class="infoContent"><strong>Durability: </strong>75</div>
+                <div class="infoContent"><strong>Power: </strong>74</div>
+                <div class="infoContent"><strong>Combat: </strong>85</div>
+            </div>
         </div>
     </div>
+    <!-- <div uk-grid>
+        <div class="uk-width-1-1 uk-text-center">
+            <h2>Superhero Name Goes Here!</h2>
+            <h3>Brand Name Goes Here!</h3>
+            <img src="bioTest.jpg" alt="bioImage" id="bioImg" />
+            <div class="uk-width-1-3"></div>
+            <h3>Biography</h3>
+            <div id="heroName">
+                Full name:
+            </div>
+            <div id="heroBirth">
+                Birth place:
+            </div>
+            <div id="heroAppear">
+                First appearance:
+            </div>
+            <div id="heroAlign">
+                Alignment:
+            </div>
+            <div id="heroOccu">
+                Occupation:
+            </div>
+        </div>
+        <div class="uk-flex-bottom uk-width-1-2  uk-text-center">
+            <h3>Appearance</h3>
+            <div id="heroGender">
+                Gender:
+            </div>
+            <div id="heroRace">
+                Race:
+            </div>
+            <div id="heroHeight">
+                Height:
+            </div>
+            <div id="heroWeight">
+                Weight:
+            </div>
+            <div id="heroEye">
+                Eye color:
+            </div>
+            <div id="heroHair">
+                Hair color:
+            </div>
+        </div>
+        <div class="uk-flex-bottom uk-width-1-2  uk-text-center">
+            <h3>Power stats</h3>
+            <div id="heroIntel">
+                Intelligence:
+            </div>
+            <div id="heroStr">
+                Strength:
+            </div>
+            <div id="heroSpeed">
+                Speed:
+            </div>
+            <div id="heroDura">
+                Durability:
+            </div>
+            <div id="heroPower">
+                Power:
+            </div>
+            <div id="heroCombat">
+                Combat:
+            </div>
+        </div>
+    </div>
+    </div>
+    <div uk-grid>
+        <div class="uk-width-expand@m superPics">
+            <h2>Wallpapers</h2>
+            <img src="wallTest.jpg" alt="imageTest1" />
+            <img src="wallTest2.jpg" alt="imageTest2" />
+            <img src="wallTest3.jpg" alt="imageTest3" />
+            <img src="wallTest4.jpg" alt="imageTest4" />
+        </div>
+    </div> -->
 
+</body>
 
 </html>
