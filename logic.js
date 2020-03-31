@@ -129,7 +129,7 @@ $(document).ready(function () {
 
                     // Append divs
                     heroPaginationDiv.append(newSpanButton);
-                    powerStatsDiv.append(intelligenceDiv).append(strengthDiv).append(speedDiv).append(durabilityDiv).append(powerDiv).append(combatDiv);
+                    powerStatsDiv.append(powerStatsHeading).append(intelligenceDiv).append(strengthDiv).append(speedDiv).append(durabilityDiv).append(powerDiv).append(combatDiv);
                     appearanceDiv.append(appearanceHeading).append(genderDiv).append(raceDiv).append(heightDiv).append(weightDiv).append(eyeColorDiv).append(hairColorDiv);
                     biographyDiv.append(biographyHeading).append(fullNameDiv).append(birthPlaceDiv).append(firstAppearanceDiv).append(alignmentDiv).append(occupationDiv);
                     heroAboutDiv.append(biographyDiv).append(appearanceDiv).append(powerStatsDiv);
@@ -140,23 +140,27 @@ $(document).ready(function () {
                 // Prepend the pagination div to the heroInfo div
                 $("#heroInfo").prepend(heroPaginationDiv);
 
-                // Add active to 1st search result
-                heroPaginationDiv.children(":first").addClass("active");                
-                console.log(heroPaginationDiv.children(":first"))
+                // Add active to 1st button and view first search result
+                heroPaginationDiv.children(":first").addClass("active");
+                $("div[data-index*=1]").css("display", "block");
             }
-
-            // Show result based on active heroPageNum
-            var activePageNum = $(".active").text();
-            console.log(activePageNum);
-            if ($(".heroResult").attr("data-index") == activePageNum) {
-                $("div[data-index*=" + activePageNum + "]").css("display", "block");
-            }
-
-            // Listen for an event on the heroPageNum spans
-            // If clicked, add class active and remove it from other spans
-            // Change heroResult to matching data-index
 
         })
+
+    })
+
+    // Listen for an event on the heroPageNum spans
+    $(document).on("click", ".heroPageNum", function () {
+        // If clicked, add class active and remove it from other spans
+        $(".heroPageNum").removeClass("active");
+        console.log($(this))
+        $(this).addClass("active");
+        // Show result based on active heroPageNum
+        var activePageNum = $(".active").text();
+        // Change heroResult to matching data-index
+        $(".heroResult").css("display", "none");
+        $("div[data-index*=" + activePageNum + "]").css("display", "block");
+
     })
 
 
