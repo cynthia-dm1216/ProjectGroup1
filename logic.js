@@ -26,7 +26,7 @@ $(document).ready(function () {
         e.preventDefault();
 
         // Superhero API ---------WORKS!!!        
-        var queryName = "Spider-man";
+        var queryName = $("#heroSearchInput").val().trim();
         var accessToken = "2839209799538545";
         var queryURL = "https://superheroapi.com/api/" + accessToken + "/search/" + queryName;
 
@@ -73,11 +73,11 @@ $(document).ready(function () {
                     // Create a button for each result
                     var newSpanButton = $("<span>").addClass("heroPageNum");
                     // Create divs and add classes
-                    var heroResultContainer = $("<div>").addClass("heroResult").attr("data-index", i + 1);
+                    var heroResultContainer = $("<div>").addClass("heroResult uk-width-1-1").attr("data-index", i + 1);
                     var heroHeadDiv = $("<div>").addClass("heroHead uk-width-1-1 uk-flex uk-flex-column");
                     var heroNameSpan = $("<span>").addClass("heroName uk-text-large");
                     var publisherSpan = $("<span>").addClass("publisher uk-text-muted");
-                    var imgEl = $("<img>").attr({ "data-src": imageUrl, "alt": name, "uk-img": "" });
+                    var imgEl = $("<img>").addClass("heroImg").attr({ "data-src": imageUrl, "alt": name, "uk-img": "" });
                     var heroAboutDiv = $("<div>").addClass("heroAbout").attr("uk-grid", "");
                     var biographyDiv = $("<div>").addClass("aboutCategory uk-flex uk-flex-column uk-width-1-2@s");
                     var biographyHeading = $("<div>").addClass("infoHeading uk-text-bold uk-text-muted");
@@ -107,29 +107,29 @@ $(document).ready(function () {
                     heroNameSpan.text(name);
                     publisherSpan.text(publisher);
                     biographyHeading.text("Biography");
-                    fullNameDiv.html("<strong>Full name: <strong>" + fullName);
-                    birthPlaceDiv.html("<strong>Birth place: <strong>" + birthPlace);
-                    firstAppearanceDiv.html("<strong>First appearance: <strong>" + firstAppearance);
-                    alignmentDiv.html("<strong>Alignment: <strong>" + alignment);
-                    occupationDiv.html("<strong>Occupation: <strong>" + occupation);
+                    fullNameDiv.html("<strong>Full name: </strong>" + fullName);
+                    birthPlaceDiv.html("<strong>Birth place: </strong>" + birthPlace);
+                    firstAppearanceDiv.html("<strong>First appearance: </strong>" + firstAppearance);
+                    alignmentDiv.html("<strong>Alignment: </strong>" + alignment);
+                    occupationDiv.html("<strong>Occupation: </strong>" + occupation);
                     appearanceHeading.text("Appearance");
-                    genderDiv.html("<strong>Gender: <strong>" + gender);
-                    raceDiv.html("<strong>Race: <strong>" + race);
-                    heightDiv.html("<strong>Height: <strong>" + height);
-                    weightDiv.html("<strong>Weight: <strong>" + weight);
-                    eyeColorDiv.html("<strong>Eye color: <strong>" + eyeColor);
-                    hairColorDiv.html("<strong>Hair color: <strong>" + hairColor);
+                    genderDiv.html("<strong>Gender: </strong>" + gender);
+                    raceDiv.html("<strong>Race: </strong>" + race);
+                    heightDiv.html("<strong>Height: </strong>" + height);
+                    weightDiv.html("<strong>Weight: </strong>" + weight);
+                    eyeColorDiv.html("<strong>Eye color: </strong>" + eyeColor);
+                    hairColorDiv.html("<strong>Hair color: </strong>" + hairColor);
                     powerStatsHeading.text("Power stats");
-                    intelligenceDiv.html("<strong>Intelligence: <strong>" + intelligence);
-                    strengthDiv.html("<strong>Strength: <strong>" + strength);
-                    speedDiv.html("<strong>Speed: <strong>" + speed);
-                    durabilityDiv.html("<strong>Durability: <strong>" + durability);
-                    powerDiv.html("<strong>Power: <strong>" + power);
-                    combatDiv.html("<strong>Combat: <strong>" + combat);
+                    intelligenceDiv.html("<strong>Intelligence: </strong>" + intelligence);
+                    strengthDiv.html("<strong>Strength: </strong>" + strength);
+                    speedDiv.html("<strong>Speed: </strong>" + speed);
+                    durabilityDiv.html("<strong>Durability: </strong>" + durability);
+                    powerDiv.html("<strong>Power: </strong>" + power);
+                    combatDiv.html("<strong>Combat: </strong>" + combat);
 
                     // Append divs
                     heroPaginationDiv.append(newSpanButton);
-                    powerStatsDiv.append(intelligenceDiv).append(strengthDiv).append(speedDiv).append(durabilityDiv).append(powerDiv).append(combatDiv);
+                    powerStatsDiv.append(powerStatsHeading).append(intelligenceDiv).append(strengthDiv).append(speedDiv).append(durabilityDiv).append(powerDiv).append(combatDiv);
                     appearanceDiv.append(appearanceHeading).append(genderDiv).append(raceDiv).append(heightDiv).append(weightDiv).append(eyeColorDiv).append(hairColorDiv);
                     biographyDiv.append(biographyHeading).append(fullNameDiv).append(birthPlaceDiv).append(firstAppearanceDiv).append(alignmentDiv).append(occupationDiv);
                     heroAboutDiv.append(biographyDiv).append(appearanceDiv).append(powerStatsDiv);
@@ -140,23 +140,27 @@ $(document).ready(function () {
                 // Prepend the pagination div to the heroInfo div
                 $("#heroInfo").prepend(heroPaginationDiv);
 
-                // Add active to 1st search result
-                heroPaginationDiv.children(":first").addClass("active");                
-                console.log(heroPaginationDiv.children(":first"))
+                // Add active to 1st button and view first search result
+                heroPaginationDiv.children(":first").addClass("active");
+                $("div[data-index*=1]").css("display", "block");
             }
-
-            // Show result based on active heroPageNum
-            var activePageNum = $(".active").text();
-            console.log(activePageNum);
-            if ($(".heroResult").attr("data-index") == activePageNum) {
-                $("div[data-index*=" + activePageNum + "]").css("display", "block");
-            }
-
-            // Listen for an event on the heroPageNum spans
-            // If clicked, add class active and remove it from other spans
-            // Change heroResult to matching data-index
 
         })
+
+    })
+
+    // Listen for an event on the heroPageNum spans
+    $(document).on("click", ".heroPageNum", function () {
+        // If clicked, add class active and remove it from other spans
+        $(".heroPageNum").removeClass("active");
+        console.log($(this))
+        $(this).addClass("active");
+        // Show result based on active heroPageNum
+        var activePageNum = $(".active").text();
+        // Change heroResult to matching data-index
+        $(".heroResult").css("display", "none");
+        $("div[data-index*=" + activePageNum + "]").css("display", "block");
+
     })
 
 

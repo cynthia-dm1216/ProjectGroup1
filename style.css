@@ -32,6 +32,16 @@ h3 {
     box-sizing: border-box;
 }
 
+#heroInfo {
+    width: 100%;
+    margin: 0;
+    background-color: #212129;
+}
+
+.heroPagination {
+    padding: 0;
+}
+
 .heroPageNum {
     background-color: brown;
     padding: 10px;
@@ -52,12 +62,17 @@ h3 {
 
 .heroHead {
     margin-top: none;
-    margin-left: 20px;
+    padding: 20px;
+}
+
+.heroImg {
+    width: 100%;
 }
 
 .heroAbout {
-    margin-left: 0;
     width: 100%;
+    padding: 20px;
+    margin: 0;
 }
 
 .heroName {
@@ -81,4 +96,6 @@ h3 {
 
 .heroResult {
     display: none;
+    padding: 0;
+    margin: 0;
 }
