@@ -80,14 +80,14 @@ $(document).ready(function () {
                     var imgEl = $("<img>").addClass("heroImg").attr({ "data-src": imageUrl, "alt": name, "uk-img": "" });
                     var heroAboutDiv = $("<div>").addClass("heroAbout").attr("uk-grid", "");
                     var biographyDiv = $("<div>").addClass("aboutCategory uk-flex uk-flex-column uk-width-1-2@s");
-                    var biographyHeading = $("<div>").addClass("infoHeading uk-text-bold uk-text-muted");
+                    var biographyHeading = $("<div>").addClass("infoHeading uk-text-bold");
                     var fullNameDiv = $("<div>").addClass("infoContent");
                     var birthPlaceDiv = $("<div>").addClass("infoContent");
                     var firstAppearanceDiv = $("<div>").addClass("infoContent");
                     var alignmentDiv = $("<div>").addClass("infoContent");
                     var occupationDiv = $("<div>").addClass("infoContent");
                     var appearanceDiv = $("<div>").addClass("aboutCategory uk-flex uk-flex-column uk-width-1-4@s uk-width-1-2");
-                    var appearanceHeading = $("<div>").addClass("infoHeading uk-text-bold uk-text-muted");
+                    var appearanceHeading = $("<div>").addClass("infoHeading uk-text-bold");
                     var genderDiv = $("<div>").addClass("infoContent");
                     var raceDiv = $("<div>").addClass("infoContent");
                     var heightDiv = $("<div>").addClass("infoContent");
@@ -95,7 +95,7 @@ $(document).ready(function () {
                     var eyeColorDiv = $("<div>").addClass("infoContent");
                     var hairColorDiv = $("<div>").addClass("infoContent");
                     var powerStatsDiv = $("<div>").addClass("aboutCategory uk-flex uk-flex-column uk-width-1-4@s uk-width-1-2");
-                    var powerStatsHeading = $("<div>").addClass("infoHeading uk-text-bold uk-text-muted");
+                    var powerStatsHeading = $("<div>").addClass("infoHeading uk-text-bold");
                     var intelligenceDiv = $("<div>").addClass("infoContent");
                     var strengthDiv = $("<div>").addClass("infoContent");
                     var speedDiv = $("<div>").addClass("infoContent");
