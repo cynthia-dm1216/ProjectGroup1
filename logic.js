@@ -42,9 +42,36 @@ $(document).ready(function () {
         }).then(function (response) {
             var results = response.results;
             if (results.length > 1) {
-                // Create a button for each result
-                // Take data for each result
-                // Only view the first one and hide the rest (through class)
+                for (var i = 0; i < results.length; i++) {
+                    var hero = results[i];
+                    // Take data for each result
+                    var name = hero.name;
+                    var publisher = hero.biography.publisher;
+                    var imageUrl = hero.image.url;
+                    var fullName = hero.biography["full-name"];
+                    var birthPlace = hero.biography["place-of-birth"];
+                    var firstAppearance = hero.biography["first-appearance"];
+                    var alignment = hero.biography.alignment;
+                    var occupation = hero.work.occupation;
+                    var gender = hero.appearance.gender;
+                    var race = hero.appearance.race;
+                    var height = hero.appearance.height[0];
+                    var weight = hero.appearance.weight[0];
+                    var eyeColor = hero.appearance["eye-color"];
+                    var hairColor = hero.appearance["hair-color"];
+                    var intelligence = hero.powerstats.intelligence;
+                    var strength = hero.powerstats.strength;
+                    var speed = hero.powerstats.speed;
+                    var durability = hero.powerstats.durability;
+                    var power = hero.powerstats.power;
+                    var combat = hero.powerstats.combat;
+                    // Create a button for each result
+                    // Create divs and add classes
+                    // Add texts
+                    // Only view the first one and hide the rest (through class)
+                    // Append divs
+                }
+
             }
             // var searchList = response.results;
             // for (var i = 0; i < searchList.length; i++) {
