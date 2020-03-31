@@ -29,9 +29,9 @@
         <!-- submit search 
                     dunno how to get it centered, 
                     not gunna waste more time on it-->
-        <form class="uk-search uk-search-default">
+        <form class="uk-search uk-search-default" id="heroForm">
             <a href="" uk-search-icon></a>
-            <input class="uk-search-input" type="search" placeholder="Search here!">
+            <input class="uk-search-input" id="searchButton" type="search" placeholder="Search here!">
         </form>
         <!-- section & container set up for UIkit -->
         <div class="uk-section-default">
@@ -54,12 +54,12 @@
     </header>
     <div uk-grid>
         <div class="uk-width-1-1 uk-text-center">
-            <h2>Superhero Name Goes Here!</h2>
-            <h3>Brand Name Goes Here!</h3>
-            <img src="bioTest.jpg" alt="bioImage" id="bioImg" />
+            <h2 id="heroName">Superhero Name Goes Here!</h2>
+            <h3 id="heroPub"></h3>
+            <img alt="bioImage" id="bioImg"/>
             <div class="uk-width-1-3"></div>
             <h3>Biography</h3>
-            <div id="heroName">
+            <div id="heroFullName">
                 Full name:
             </div>
             <div id="heroBirth">
@@ -107,7 +107,7 @@
             <div id="heroSpeed">
                 Speed:
             </div>
-            <div id="heroDura">
+            <div id="heroDurab">
                 Durability:
             </div>
             <div id="heroPower">
