@@ -41,6 +41,11 @@ $(document).ready(function () {
             method: "GET"
         }).then(function (response) {
             var results = response.results;
+
+            // Create a div to hold the buttons
+            var heroPaginationDiv = $("<div>").addClass("heroPagination uk-width-1-1 uk-child-width-expand uk-margin-remove uk-flex uk-flex-center uk-text-center uk-text-bold");
+            
+            // Loop through results
             if (results.length > 1) {
                 for (var i = 0; i < results.length; i++) {
                     var hero = results[i];
@@ -66,7 +71,9 @@ $(document).ready(function () {
                     var power = hero.powerstats.power;
                     var combat = hero.powerstats.combat;
                     // Create a button for each result
+                    var newSpanButton = $("<span>").addClass("heroPageNum");
                     // Create divs and add classes
+                    
                     // Add texts
                     // Only view the first one and hide the rest (through class)
                     // Append divs
