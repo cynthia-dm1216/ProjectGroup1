@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+<<<<<<< HEAD
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>What the Wall</title>
     <style type="text/css">
@@ -13,6 +14,25 @@
             margin: 10px;
         }
     </style>
+=======
+    <title>Superhero B&B</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.3.7/dist/css/uikit.min.css" />
+    <!-- link to our style sheet -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.3.7/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.3.7/dist/js/uikit-icons.min.js"></script>
+
+    <!-- Ajax and jQuery CDNS -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- My JS file -->
+    <script src="logic.js"></script>
+
+>>>>>>> 003dd016d6f671af604984e46407b8d77454a2a7
 </head>
 
 <body>
@@ -23,6 +43,7 @@
             <label for="wall-input">Add a Wallpaper</label>
             <input type="text" id="wall-input"><br>
 
+<<<<<<< HEAD
             <!---Buttons triger a wallpaper user to choose from-->
             <input id="add-wall" type="submit" value="Add a Wallpaper">
         </form>
@@ -70,3 +91,93 @@
 </body>
 
 </html>
+=======
+    <!-- Main Header-->
+    <header class="uk-flex uk-flex-column uk-flex-middle">
+        <h1 class="uk-text-center">Superhero Background & Backgrounds</h1>
+        <!-- submit search 
+                    dunno how to get it centered, 
+                    not gunna waste more time on it-->
+        <form id="heroForm" class="uk-search uk-search-default">
+            <a href="" class="uk-search-icon-flip" uk-search-icon></a>
+            <input id="heroSearchInput" class="uk-search-input" type="search" placeholder="Search here!">
+        </form>
+    </header>
+
+    <!-- Main Content -->
+    <div id="heroInfo" uk-grid>
+        <!-- section & container set up for UIkit -->
+        <div class="uk-section-default uk-width-1-1 uk-padding-remove">
+            <div class="uk-section uk-light uk-background-cover" style="background-image: url(textBackground.png)">
+                <div class="uk-container">
+                    <h3>Hello! Welcome to Superhero Background & Backgrounds!</h3>
+                    <div class="uk-grid-match uk-child-width-1-3@m textShadow" uk-grid>
+                        <div>
+                            <p>This application will return superhero information and backgrounds to you!
+                                Use the search form below to find these items about your favorite superhero(es)!
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- <div
+            class="heroPagination uk-width-1-1 uk-child-width-expand uk-margin-remove uk-flex uk-flex-center uk-text-center uk-text-bold">
+            <span class="heroPageNum active">1</span>
+            <span class="heroPageNum">2</span>
+            <span class="heroPageNum">3</span>
+        </div>
+        <div class="heroResult uk-width-1-1" data-index="1">
+            <div class="heroHead uk-width-1-1 uk-flex uk-flex-column">
+                <span class="heroName uk-text-large">Spiderman</span>
+                <span class="publisher uk-text-muted">Marvel Comics</span>
+            </div>
+            <img data-src="https://cdn.gamer-network.net/2018/usgamer/SpiderMan-PS4-Header-06.jpg/EG11/thumbnail/1920x1080/format/jpg/quality/65/17-12-2018-spider-man-ps4-guide-tips-controls-photo-mode-difficulty.jpg"
+                alt="Spiderman" uk-img>
+            <div class="heroAbout" uk-grid>
+                <div class="aboutCategory uk-flex uk-flex-column uk-width-1-2@s">
+                    <div class="infoHeading uk-text-bold uk-text-muted">Biography</div>
+                    <div class="infoContent"><strong>Full name: </strong>Peter Parker</div>
+                    <div class="infoContent"><strong>Birth place: </strong>New York, New York</div>
+                    <div class="infoContent"><strong>First appearance: </strong>Amazing Fantasy</div>
+                    <div class="infoContent"><strong>Alignment: </strong>Good</div>
+                    <div class="infoContent"><strong>Occupation: </strong>Freelance photographer, teacher</div>
+                </div>
+                <div class="aboutCategory uk-flex uk-flex-column uk-width-1-4@s uk-width-1-2">
+                    <div class="infoHeading uk-text-bold uk-text-muted">Appearance</div>
+                    <div class="infoContent"><strong>Gender: </strong>Male</div>
+                    <div class="infoContent"><strong>Race: </strong>Human</div>
+                    <div class="infoContent"><strong>Height: </strong>5'10"</div>
+                    <div class="infoContent"><strong>Weight: </strong>165 lb</div>
+                    <div class="infoContent"><strong>Eye color: </strong>Hazel</div>
+                    <div class="infoContent"><strong>Hair color: </strong>Brown</div>
+                </div>
+                <div class="aboutCategory uk-flex uk-flex-column uk-width-1-4@s uk-width-1-2">
+                    <div class="infoHeading uk-text-bold uk-text-muted">Power stats</div>
+                    <div class="infoContent"><strong>Intelligence: </strong>90</div>
+                    <div class="infoContent"><strong>Strength: </strong>55</div>
+                    <div class="infoContent"><strong>Speed: </strong>67</div>
+                    <div class="infoContent"><strong>Durability: </strong>75</div>
+                    <div class="infoContent"><strong>Power: </strong>74</div>
+                    <div class="infoContent"><strong>Combat: </strong>85</div>
+                </div>
+            </div>
+        </div> -->
+    </div>
+
+    <!-- <div uk-grid>
+        <div class="uk-width-expand@m superPics">
+            <h2>Wallpapers</h2>
+            <img src="wallTest.jpg" alt="imageTest1" />
+            <img src="wallTest2.jpg" alt="imageTest2" />
+            <img src="wallTest3.jpg" alt="imageTest3" />
+            <img src="wallTest4.jpg" alt="imageTest4" />
+        </div>
+    </div> -->
+
+</body>
+
+</html>
+</body>
+>>>>>>> 003dd016d6f671af604984e46407b8d77454a2a7
