@@ -37,24 +37,6 @@ header h1 {
     color: #444;
 }
 
-#bioImg {
-    max-width: 200px;
-    max-height: 200px;
-    margin: 20px;
-}
-
-.submitBtn {
-    background-color: white;
-}
-
-.superInfo {
-    text-align: center;
-}
-
-.superPics {
-    text-align: center;
-}
-
 #heroInfo {
     width: 100%;
     margin: 0;
