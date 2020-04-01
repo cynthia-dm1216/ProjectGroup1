@@ -152,55 +152,50 @@ $(document).ready(function () {
                 $("*[data-index='1']").css("display", "block");
             }
 
+            // Cynthia
+            // WHEN I scroll down even more
+            // THEN I am presented with images of wallpapers related to the superhero
+            // Get data from image api
+            // Render data on DOM
+
+            // var queryname = $("#heroSearchInput").val().trim(); // Already declared previously
+            var AccessKey = "JINdia7koUjq_pI2PJaRPDBiIJfg9sGoHF4a3t_2olw";
+            var queryUrl = "https://api.unsplash.com/search/photos/?client_id=" + AccessKey + "&query=" + queryName;
+
+            jQuery.ajaxPrefilter(function (options) {
+                if (options.crossDomain && jQuery.support.cors) {
+                    options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
+                }
+            });
+
+            // Ajax  GET request
+            $.ajax({
+                url: queryUrl,
+                method: "GET"
+                // After data comes back from API
+            }).then(function (response) {
+
+                var result = response.results;
+                console.log(result);
+                // Create divs here
+                var imageContainer = $("<div>").addClass("uk-width-1-1 uk-padding-remove uk-margin-remove-top");
+                var headingTitle = $('<div>').addClass("infoHeading uk-text-bold uk-text-muted uk-padding-small").text("Wallpapers");
+
+                // Loop through image results array, limit to 4
+                for (var i = 0; i < 4; i++) {
+                    // Get image url and alt descriptions for each result
+                    var imageURL = result[i].urls.regular;
+                    var altDescription = result[i]["alt_description"];
+                    // Crate image divs
+                    var img = $('<img>').attr({ src: imageURL, alt: altDescription, width: "100%" });
+                    //append img uk
+                    imageContainer.append(img);
+                }
+                imageContainer.prepend(headingTitle);
+                $("#heroInfo").append(imageContainer);
+            });
+
         })
-        
-        // Cynthia
-        // WHEN I scroll down even more
-        // THEN I am presented with images of wallpapers related to the superhero
-        // Get data from image api
-        // Render data on DOM
-
-        var queryname = $("#heroSearchInput").val().trim();
-        var AccessKey = "JINdia7koUjq_pI2PJaRPDBiIJfg9sGoHF4a3t_2olw";
-        var queryUrl = "https://api.unsplash.com/search/photos/?client_id=" + AccessKey + "&query=" + queryname;
-        
-        jQuery.ajaxPrefilter(function (options) {
-            if (options.crossDomain && jQuery.support.cors) {
-                options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
-            }
-        });
-
-        // Ajax  GET request
-        $.ajax({
-            url: queryUrl,
-            method: "GET"
-            //after data comes back from API
-        }).then(function (response) {
-            // console.log(response);
-            var result = response.results;
-            console.log(result);
-            // create divs here//
-            var imageContainer = $("<div>").attr('uk-grid', '');
-            var ukimage = $("<div>").addClass('uk-width-expand@m superPics');
-            var h2title = $('<h2>').text('Wallpapers');
-            //Loop
-            for (var i = 0; i < 4; i++) {
-                //console.log(result[i]);
-                var imageURL = result[i].urls.regular;
-                var altdescription = result[i]["alt_description"];
-                // console.log(altdescription);
-                //console.log(imageURL);
-                // image divs
-                var img = $('<img>').attr({ src: imageURL, alt: altdescription })
-                //append img uk
-                ukimage.append(img)
-            }
-            ukimage.prepend(h2title)
-            imageContainer.prepend(ukimage)
-            $('body').append(imageContainer)
-            //$('.image img').attr('src',imageURL );
-        });
-
 
         // Clear the input value
         $("#heroSearchInput").val("");
