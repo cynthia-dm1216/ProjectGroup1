@@ -2,9 +2,25 @@
 <html lang="en-us">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>What the Wall</title>
+        <meta charset="UTF-8">
+        <title>Superhero B&B</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- UIkit CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.3.7/dist/css/uikit.min.css" />
+        <!-- link to our style sheet -->
+        <link rel="stylesheet" href="style.css" />
+    
+        <!-- UIkit JS -->
+        <script src="https://cdn.jsdelivr.net/npm/uikit@3.3.7/dist/js/uikit.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/uikit@3.3.7/dist/js/uikit-icons.min.js"></script>
+    
+        <!-- Ajax and jQuery CDNS -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <!-- My JS file -->
+        <script src="logic.js"></script>
+        <script src="index.js"></script>
+    
     <style type="text/css">
         button,
         div,
@@ -16,23 +32,27 @@
 </head>
 
 <body>
-    <div class="container">
+    <!--<div class="container">
         <h1>My Wall</h1>
         <div id="buttons-view"></div>
         <form id="wall-form">
             <label for="wall-input">Add a Wallpaper</label>
             <input type="text" id="wall-input"><br>
 
-            <!---Buttons triger a wallpaper user to choose from-->
+            Buttons triger a wallpaper user to choose from-->
             <input id="add-wall" type="submit" value="Add a Wallpaper">
         </form>
 
-        <div id="wall-view"></div>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script type="text/javascript">
-        <div class= "image"><
-
-        </script>
+         <div id="wall-view"></div>
+       <div uk-grid>
+            <div class="uk-width-expand@m superPics">
+                <h2>Wallpapers</h2>
+                <img src="https://cdn.mos.cms.futurecdn.net/5e7ehPZf5RT6Jt2H9cQP6k.jpg" alt="Wonder Woman" />
+                <img class="batman" src="https://images.unsplash.com/photo-1531259683007-016a7b628fc3?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjEyMzk2MH0" alt="Batman" />
+                <img  class ="Superman" src="https://nationalpostcom.files.wordpress.com/2016/03/supermanfeature.jpg?quality=80&strip=all&w=780" alt="Superman"/>
+            </div>
+        </div>
+        
 </body>
 
 </html>

@@ -71,8 +71,14 @@ header h1 {
     padding: 20px;
 }
 
-.heroImg {
+.imageHero {
     width: 100%;
+}
+.batman{
+    width: 100%
+}
+.Superman{
+    width: 100%
 }
 
 .heroAbout {
