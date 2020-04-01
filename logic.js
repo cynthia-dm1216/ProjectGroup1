@@ -25,29 +25,34 @@ $(document).ready(function () {
     $("#heroForm").on("submit", function (e) { // Change to target form and submit event when HTML is ready
         e.preventDefault();
 
-        // Superhero API ---------WORKS!!!        
+        // Clear heroInfo div
+        $("#heroInfo").empty();
+        
+        // Get input value
         var queryName = $("#heroSearchInput").val().trim();
         var accessToken = "2839209799538545";
         var queryURL = "https://superheroapi.com/api/" + accessToken + "/search/" + queryName;
-
+        // Logic to solve CORS issue
         jQuery.ajaxPrefilter(function (options) {
             if (options.crossDomain && jQuery.support.cors) {
                 options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
             }
         });
-
+        // Request from superhero api
         $.ajax({
             url: queryURL,
             method: "GET"
         }).then(function (response) {
+            // Get the results
             var results = response.results;
 
-            // Loop through results
+            // If there is more than 1 result
             if (results.length > 1) {
                 // Create a div to hold the buttons
                 var heroPaginationDiv = $("<div>").addClass("heroPagination uk-width-1-1 uk-child-width-expand uk-margin-remove uk-flex uk-flex-center uk-text-center uk-text-bold");
-
+                // Loop through the results
                 for (var i = 0; i < results.length; i++) {
+                    // Get each result
                     var hero = results[i];
                     // Take data for each result
                     var name = hero.name;
@@ -137,6 +142,7 @@ $(document).ready(function () {
                     heroResultContainer.append(heroHeadDiv).append(imgEl).append(heroAboutDiv);
                     $("#heroInfo").append(heroResultContainer);
                 }
+
                 // Prepend the pagination div to the heroInfo div
                 $("#heroInfo").prepend(heroPaginationDiv);
 
@@ -146,21 +152,20 @@ $(document).ready(function () {
             }
 
         })
-
+        // Clear the input value
+        $("#heroSearchInput").val("");
     })
 
     // Listen for an event on the heroPageNum spans
     $(document).on("click", ".heroPageNum", function () {
-        // If clicked, add class active and remove it from other spans
+        // If clicked, remove active class from other spans and add it to clicked span
         $(".heroPageNum").removeClass("active");
-        console.log($(this))
         $(this).addClass("active");
-        // Show result based on active heroPageNum
+        // Get the now active span's text
         var activePageNum = $(".active").text();
         // Change heroResult to matching data-index
         $(".heroResult").css("display", "none");
         $("div[data-index*=" + activePageNum + "]").css("display", "block");
-
     })
 
 
