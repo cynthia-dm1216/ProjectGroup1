@@ -50,7 +50,7 @@ $(document).ready(function () {
             // If there is more than 1 result
             if (results.length > 1) {
                 // Create a div to hold the buttons
-                var heroPaginationDiv = $("<div>").addClass("heroPagination uk-width-1-1 uk-child-width-expand uk-margin-remove uk-flex uk-flex-center uk-text-center uk-text-bold");
+                var heroPaginationDiv = $("<div>").addClass("heroPagination uk-width-1-1 uk-child-width-expand uk-margin-remove uk-flex uk-flex-center uk-text-center uk-text-bold uk-flex uk-flex-wrap");
                 // Loop through the results
                 for (var i = 0; i < results.length; i++) {
                     // Get each result
@@ -149,7 +149,7 @@ $(document).ready(function () {
 
                 // Add active to 1st button and view first search result
                 heroPaginationDiv.children(":first").addClass("active");
-                $("div[data-index*=1]").css("display", "block");
+                $("*[data-index='1']").css("display", "block");
             }
 
         })
@@ -166,7 +166,7 @@ $(document).ready(function () {
         var activePageNum = $(".active").text();
         // Change heroResult to matching data-index
         $(".heroResult").css("display", "none");
-        $("div[data-index*=" + activePageNum + "]").css("display", "block");
+        $("*[data-index=" + activePageNum + "]").css("display", "block");
     })
 
 
