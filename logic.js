@@ -50,7 +50,7 @@ $(document).ready(function () {
             // If there is more than 1 result
             if (results.length > 1) {
                 // Create a div to hold the buttons
-                var heroPaginationDiv = $("<div>").addClass("uk-padding-remove uk-visible-toggle uk-margin-remove-top").attr({tabindex: "-1", "uk-slider": ""});
+                var heroPaginationDiv = $("<div>").addClass("uk-width-1-1 uk-padding-remove uk-visible-toggle uk-margin-remove-top").attr({tabindex: "-1", "uk-slider": ""});
                 var heroPageNumsDiv = $("<div>").addClass("uk-slider-items uk-grid heroPageNums uk-text-large");
                 // Loop through the results
                 for (var i = 0; i < results.length; i++) {
@@ -83,7 +83,7 @@ $(document).ready(function () {
                     var userIconSpan = $("<span>").addClass("userIcon").attr("uk-icon", "user");
                     // Create divs and add classes
                     var heroResultContainer = $("<div>").addClass("heroResult uk-width-1-1").attr("data-index", i + 1);
-                    var heroHeadDiv = $("<div>").addClass("heroHead uk-width-1-1 uk-flex uk-flex-column");
+                    var heroHeadDiv = $("<div>").addClass("heroHead uk-width-1-1 uk-flex uk-flex-column uk-padding-remove-top");
                     var heroNameSpan = $("<span>").addClass("heroName uk-text-large");
                     var publisherSpan = $("<span>").addClass("publisher uk-text-muted");
                     var imgEl = $("<img>").addClass("heroImg").attr({ "data-src": imageUrl, "alt": name, "uk-img": "" });

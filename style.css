@@ -48,6 +48,10 @@ header h1 {
     overflow-wrap: none;
 }
 
+.heroPageNums {
+    padding-left: 30px;
+}
+
 .heroPageNum {
     background-color: var(--red-color);
     padding: 10px 40px;
