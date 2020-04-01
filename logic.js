@@ -50,7 +50,8 @@ $(document).ready(function () {
             // If there is more than 1 result
             if (results.length > 1) {
                 // Create a div to hold the buttons
-                var heroPaginationDiv = $("<div>").addClass("heroPagination uk-width-1-1 uk-child-width-expand uk-margin-remove uk-flex uk-flex-center uk-text-center uk-text-bold uk-flex uk-flex-wrap");
+                var heroPaginationDiv = $("<div>").addClass("uk-padding-remove uk-visible-toggle uk-margin-remove-top").attr({tabindex: "-1", "uk-slider": ""});
+                var heroPageNumsDiv = $("<div>").addClass("uk-slider-items uk-grid heroPageNums uk-text-large");
                 // Loop through the results
                 for (var i = 0; i < results.length; i++) {
                     // Get each result
@@ -77,7 +78,9 @@ $(document).ready(function () {
                     var power = hero.powerstats.power;
                     var combat = hero.powerstats.combat;
                     // Create a button for each result
-                    var newSpanButton = $("<span>").addClass("heroPageNum");
+                    var sliderItemLi = $("<li>").addClass("uk-padding uk-padding-remove-left uk-padding-remove-right");
+                    var heroPageNumSpan = $("<span>").addClass("heroPageNum");
+                    var userIconSpan = $("<span>").addClass("userIcon").attr("uk-icon", "user");
                     // Create divs and add classes
                     var heroResultContainer = $("<div>").addClass("heroResult uk-width-1-1").attr("data-index", i + 1);
                     var heroHeadDiv = $("<div>").addClass("heroHead uk-width-1-1 uk-flex uk-flex-column");
@@ -109,7 +112,7 @@ $(document).ready(function () {
                     var powerDiv = $("<div>").addClass("infoContent");
                     var combatDiv = $("<div>").addClass("infoContent");
                     // Add texts
-                    newSpanButton.text(heroResultContainer.attr("data-index"));
+                    heroPageNumSpan.text(heroResultContainer.attr("data-index"));
                     heroNameSpan.text(name);
                     publisherSpan.text(publisher);
                     biographyHeading.text("Biography");
@@ -134,7 +137,7 @@ $(document).ready(function () {
                     combatDiv.html("<strong>Combat: </strong>" + combat);
 
                     // Append divs
-                    heroPaginationDiv.append(newSpanButton);
+                    heroPageNumsDiv.append(sliderItemLi.append(heroPageNumSpan.prepend(userIconSpan)));
                     powerStatsDiv.append(powerStatsHeading).append(intelligenceDiv).append(strengthDiv).append(speedDiv).append(durabilityDiv).append(powerDiv).append(combatDiv);
                     appearanceDiv.append(appearanceHeading).append(genderDiv).append(raceDiv).append(heightDiv).append(weightDiv).append(eyeColorDiv).append(hairColorDiv);
                     biographyDiv.append(biographyHeading).append(fullNameDiv).append(birthPlaceDiv).append(firstAppearanceDiv).append(alignmentDiv).append(occupationDiv);
@@ -145,10 +148,10 @@ $(document).ready(function () {
                 }
 
                 // Prepend the pagination div to the heroInfo div
-                $("#heroInfo").prepend(heroPaginationDiv);
+                $("#heroInfo").prepend(heroPaginationDiv.append(heroPageNumsDiv));
 
                 // Add active to 1st button and view first search result
-                heroPaginationDiv.children(":first").addClass("active");
+                heroPageNumsDiv.children(":first").children(":first").addClass("active");
                 $("*[data-index='1']").css("display", "block");
             }
 
@@ -176,7 +179,7 @@ $(document).ready(function () {
             }).then(function (response) {
 
                 var result = response.results;
-                console.log(result);
+                // console.log(result);
                 // Create divs here
                 var imageContainer = $("<div>").addClass("uk-width-1-1 uk-padding-remove uk-margin-remove-top");
                 var headingTitle = $('<div>').addClass("infoHeading uk-text-bold uk-text-muted uk-padding-small").text("Wallpapers");
@@ -208,6 +211,7 @@ $(document).ready(function () {
         $(this).addClass("active");
         // Get the now active span's text
         var activePageNum = $(".active").text();
+        console.log(activePageNum);
         // Change heroResult to matching data-index
         $(".heroResult").css("display", "none");
         $("*[data-index=" + activePageNum + "]").css("display", "block");
