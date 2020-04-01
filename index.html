@@ -34,8 +34,9 @@
             $("#find-wallpaper").on("click", function (event) {
                 //prevent Default
                 event.preventDefault();
-                var wallppaer = $("#wallpaper-input").val();
+            
             })
+            var wallPaper = ["SpiderMan", "Superman"]
             //Url and acces key
             $(document).ready(function () {
                 var queryname = "SuperHero";
@@ -56,7 +57,14 @@
                         console.log(response);
                     });
             })
-            
+            //for looping through results
+             for (var i = 0; i < result.length; i++) {
+                var superwall = response.data.image_Url
+                superwall.attr("src",imageUrl);
+                superwall.attr('alt', "super wall");
+                $('#images').prepend(superwall);
+
+             }
 
         </script>
 </body>

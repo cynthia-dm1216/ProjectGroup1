@@ -1,0 +1,27 @@
+.textShadow {
+    text-shadow: 1px 1px yellow;
+    color: black;
+}
+header {
+    background-color: darkslategray;
+}
+#bioImg {
+    max-width: 200px;
+    max-height: 200px;
+    margin: 20px;
+}
+.submitBtn {
+    background-color: white;
+}
+.superInfo {
+    text-align: center;
+}
+.superPics {
+    text-align: center;
+}
+h2 {
+    color: forestgreen;
+}
+h3 {
+    color: lime;
+}
