@@ -22,9 +22,7 @@ $(document).ready(function () {
     // THEN I am presented with the information of another result
     // Get data from superhero api for multiple results
     // Render data on DOM
-<<<<<<< HEAD
-
-=======
+    
     $("#heroForm").on("submit", function (e) { // Change to target form and submit event when HTML is ready
         e.preventDefault();
 
@@ -170,7 +168,6 @@ $(document).ready(function () {
         $(".heroResult").css("display", "none");
         $("div[data-index*=" + activePageNum + "]").css("display", "block");
     })
->>>>>>> 003dd016d6f671af604984e46407b8d77454a2a7
 
 
     // Cynthia
