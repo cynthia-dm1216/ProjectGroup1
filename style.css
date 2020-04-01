@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 * {
     padding: 0;
     margin: 0;
@@ -19,10 +21,35 @@ header h1 {
     margin-top: 20px;
 }
 
+>>>>>>> 003dd016d6f671af604984e46407b8d77454a2a7
 .textShadow {
     text-shadow: 1px 1px yellow;
     color: black;
 }
+<<<<<<< HEAD
+header {
+    background-color: darkslategray;
+}
+#bioImg {
+    max-width: 200px;
+    max-height: 200px;
+    margin: 20px;
+}
+.submitBtn {
+    background-color: white;
+}
+.superInfo {
+    text-align: center;
+}
+.superPics {
+    text-align: center;
+}
+h2 {
+    color: forestgreen;
+}
+h3 {
+    color: lime;
+=======
 
 #heroForm {
     width: 500px;
@@ -113,4 +140,5 @@ header h1 {
     #heroForm {
         width: 90%;
     }
+>>>>>>> 003dd016d6f671af604984e46407b8d77454a2a7
 }
