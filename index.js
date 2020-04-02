@@ -24,6 +24,10 @@ $(document).ready(function () {
                 //console.log(imageURL);
 
             }
+           //creating divs for slideShow
+           var slideShowDiv = $("<div>").addClass("uk-h3");
+           var slideshowFadeDiv = $("<div>").addClass("uk-position-relative uk-visible-toggle uk-light");
+           var slideShowItems = $("<ul>").addClass("uk-slideshow-items")
         });
 
 })

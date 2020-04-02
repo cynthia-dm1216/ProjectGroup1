@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Roboto&display=swap"
+        rel="stylesheet">
 
     <!-- UIkit CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.3.7/dist/css/uikit.min.css" />
@@ -44,14 +45,38 @@
     <section id="heroInfo" uk-grid>
 
         <!-- Home screen content -->
-        <div class="uk-position-relative uk-width-1-1 uk-flex uk-flex-column uk-flex-middle uk-padding-small homeContent" uk-height-viewport="expand: true">
-            <div class="speechBubble uk-padding-small uk-text-center">Hello! Welcome to Superhero Background & Backgrounds!</div>
+        <div class="uk-position-relative uk-width-1-1 uk-flex uk-flex-column uk-flex-middle uk-padding-small homeContent"
+            uk-height-viewport="expand: true">
+            <div class="speechBubble uk-padding-small uk-text-center">Hello! Welcome to Superhero Background &
+                Backgrounds!</div>
             <img class="codingHero" src="./assets/images/coding-hero-stance.png" alt="Coding Hero">
         </div>
+        <!--SlideShow---->
+        <div class="uk-h3">Fade</div>
+        <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slideshow="animation: fade">
+            <ul class="uk-slideshow-items">
+                <li>
+                    <img src="https://images.unsplash.com/photo-1513384312027-9fa69a360337?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjEyMzk2MH0"
+                        alt="SuperMan" uk-cover>
+                </li>
+                <li>
+                    <img src="https://images.unsplash.com/photo-1532202802379-df93d543bac3?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjEyMzk2MH0"
+                        alt="adorable puppy" uk-cover>
+                </li>
+                <li>
+                    <li>
+                        <img src="https://images.unsplash.com/photo-1513384312027-9fa69a360337?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjEyMzk2MH0" alt="batman" uk-cover>
+                    </li>
+                </li>
+            </ul>
+            <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous">Previous</a>
+            <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next">Next</a>
 
-        <!-- Pagination -->
-        <!-- Hardcoded for testing UI -->
-        <!-- <div id="heroPagination" class="uk-padding-remove uk-visible-toggle uk-margin-remove-top" tabindex="-1" uk-slider>
+        </div>
+
+                <!-- Pagination -->
+                <!-- Hardcoded for testing UI -->
+                <!-- <div id="heroPagination" class="uk-padding-remove uk-visible-toggle uk-margin-remove-top" tabindex="-1" uk-slider>
             <ul class="uk-slider-items uk-grid heroPageNums uk-text-large">
                 <li class="uk-padding uk-padding-remove-left uk-padding-remove-right"><span class="heroPageNum"><span
                             class="userIcon" uk-icon="user"></span>Superman</span></li>
@@ -76,9 +101,9 @@
             </ul>
         </div> -->
 
-        <!-- Superhero data result -->
-        <!-- Hardcoded for testing UI -->
-        <!-- <div class="heroResult uk-width-1-1" data-index="1">
+                <!-- Superhero data result -->
+                <!-- Hardcoded for testing UI -->
+                <!-- <div class="heroResult uk-width-1-1" data-index="1">
             <div class="heroHead uk-width-1-1 uk-flex uk-flex-column">
                 <span class="heroName uk-text-large">Spiderman</span>
                 <span class="publisher uk-text-muted">Marvel Comics</span>
@@ -115,9 +140,9 @@
             </div>
         </div> -->
 
-        <!-- Unsplash images result -->
-        <!-- Hardcoded for testing UI -->
-        <!-- <div class="uk-width-1-1 uk-padding-remove uk-margin-remove-top">
+                <!-- Unsplash images result -->
+                <!-- Hardcoded for testing UI -->
+                <!-- <div class="uk-width-1-1 uk-padding-remove uk-margin-remove-top">
             <div class="infoHeading uk-text-bold uk-text-muted uk-padding-small">Wallpapers</div>
             <img src="wallTest.jpg" alt="imageTest1" />
             <img src="wallTest2.jpg" alt="imageTest2" />
