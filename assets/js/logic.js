@@ -183,10 +183,8 @@ $(document).ready(function () {
             // Render data on DOM
 
             // var queryname = $("#heroSearchInput").val().trim(); // Already declared previously
-            var dataName = $("*[data-index='1']").attr("data-name");
-            console.log(dataName);
             var AccessKey = "JINdia7koUjq_pI2PJaRPDBiIJfg9sGoHF4a3t_2olw";
-            var queryUrl = "https://api.unsplash.com/search/photos/?client_id=" + AccessKey + "&query=" + dataName;
+            var queryUrl = "https://api.unsplash.com/search/photos/?client_id=" + AccessKey + "&query=" + queryName;
 
             jQuery.ajaxPrefilter(function (options) {
                 if (options.crossDomain && jQuery.support.cors) {
@@ -213,10 +211,7 @@ $(document).ready(function () {
                     var imageURL = result[i].urls.regular;
                     var altDescription = result[i]["alt_description"];
                     // Crate image divs
-                    
                     var img = $('<img>').attr({ src: imageURL, alt: altDescription, width: "100%" });
-                    //getting data from a div attribute
-
                     //append img uk
                     imageContainer.append(img);
                 }
@@ -236,12 +231,18 @@ $(document).ready(function () {
         $(".heroPageNum").removeClass("active");
         $(this).addClass("active");
         // Get the now active span's text
-        var activePageNum = $(".active").text();
-        console.log(activePageNum);
+        var activePageName = $(".active").text();
+        console.log(activePageName);
         // Change heroResult to matching data-index
         $(".heroResult").css("display", "none");
-        $("*[data-index=" + activePageNum + "]").css("display", "block");
+        $("*[data-name='" + activePageName + "']").css("display", "block");
     })
 
+    // Listen for an event on the search icon
+    $("#searchIcon").on("click", function(e) {
+        e.preventDefault();
+
+        // Render data
+    })
 
 })
