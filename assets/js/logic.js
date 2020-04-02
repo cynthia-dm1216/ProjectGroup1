@@ -200,7 +200,7 @@ $(document).ready(function () {
             }).then(function (response) {
 
                 var result = response.results;
-                // console.log(result);
+                console.log(result);
                 // Create divs here
                 var imageContainer = $("<div>").addClass("uk-width-1-1 uk-padding-remove uk-margin-remove-top");
                 var headingTitle = $('<div>').addClass("infoHeading uk-text-bold uk-text-muted uk-padding-small").text("Wallpapers");
@@ -208,7 +208,7 @@ $(document).ready(function () {
                 // Loop through image results array, limit to 4
                 for (var i = 0; i < 4; i++) {
                     // Get image url and alt descriptions for each result
-                    var imageURL = result[i].urls.regular;
+                    var imageURL = result[i].urls.small;
                     var altDescription = result[i]["alt_description"];
                     // Crate image divs
                     var img = $('<img>').attr({ src: imageURL, alt: altDescription, width: "100%" });
