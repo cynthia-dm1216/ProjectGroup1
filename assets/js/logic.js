@@ -7,22 +7,22 @@ $(document).ready(function () {
     // GIVEN the application
     // WHEN I arrive on the home screen
     // THEN I am presented with an animation telling me about the application
-
     setTimeout(function () {
         $(".codingHero").attr("src", "./assets/images/coding-hero-stance-5.png");
         $(".speechBubble").text("This application will return superhero information and backgrounds to you!")
     }, 3000);
 
     setTimeout(function () {
-        $(".codingHero").attr("src", "./assets/images/coding-hero-fly.png");
+        $(".codingHero").attr("src", "./assets/images/coding-hero-stance-3.png");
         $(".speechBubble").text("Use the search form above to find informations about your favorite superhero(es)!")
     }, 6000);
 
     setTimeout(function () {
         $(".speechBubble").css("display", "none");
+        $(".codingHero").attr("src", "./assets/images/coding-hero-fly.png");
         setInterval(function () {
-            $(".codingHero").css("bottom", "+=2px");
-        }, 50);
+            $(".codingHero").css("bottom", "+=5px");
+        }, 10);
     }, 10000);
 
     setTimeout(function () {
@@ -103,7 +103,7 @@ $(document).ready(function () {
                     var heroPageNumSpan = $("<span>").addClass("heroPageNum");
                     var userIconSpan = $("<span>").addClass("userIcon").attr("uk-icon", "user");
                     // Create divs and add classes
-                    var heroResultContainer = $("<div>").addClass("heroResult uk-width-1-1").attr("data-index", i + 1);
+                    var heroResultContainer = $("<div>").addClass("heroResult uk-width-1-1").attr({"data-index": i + 1, "data-name": name});
                     var heroHeadDiv = $("<div>").addClass("heroHead uk-width-1-1 uk-flex uk-flex-column uk-padding-remove-top");
                     var heroNameSpan = $("<span>").addClass("heroName uk-text-large");
                     var publisherSpan = $("<span>").addClass("publisher uk-text-muted");
@@ -133,7 +133,7 @@ $(document).ready(function () {
                     var powerDiv = $("<div>").addClass("infoContent");
                     var combatDiv = $("<div>").addClass("infoContent");
                     // Add texts
-                    heroPageNumSpan.text(heroResultContainer.attr("data-index"));
+                    heroPageNumSpan.text(heroResultContainer.attr("data-name"));
                     heroNameSpan.text(name);
                     publisherSpan.text(publisher);
                     biographyHeading.text("Biography");
