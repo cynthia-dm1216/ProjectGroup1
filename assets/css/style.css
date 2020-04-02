@@ -1,0 +1,121 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    --red-color: #D43131;
+    --black-color: #2E2A2A;
+}
+
+header {
+    background-color: var(--red-color);
+    width: 100%;
+}
+
+header h1 {
+    color: #f2f2f2;
+    margin-top: 20px;
+}
+
+.textShadow {
+    text-shadow: 1px 1px yellow;
+    color: black;
+}
+
+#heroForm {
+    width: 500px;
+    margin-bottom: 20px;
+}
+
+#heroSearchInput {
+    width: 100%;
+    border-radius: 4px;
+    background-color: #f2f2f2;
+    border: none;
+    color: #444;
+}
+
+#heroInfo {
+    width: 100%;
+    margin: 0;
+    background-color: #212129;
+}
+
+.heroPagination {
+    overflow-x: hidden;
+    overflow-wrap: none;
+}
+
+.heroPageNums {
+    padding-left: 30px;
+}
+
+.heroPageNum {
+    background-color: var(--red-color);
+    padding: 10px 40px;
+    margin: 10px !important;
+    color: #f2f2f2;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.heroPageNum:hover {
+    background-color: rgb(209, 35, 35);
+}
+
+.heroPageNum.active {
+    background-color: #f2f2f2;
+    color: rgb(209, 35, 35);
+    cursor: default;
+}
+
+.heroHead {
+    margin-top: none;
+    padding: 20px;
+}
+
+.heroImg {
+    width: 100%;
+}
+
+.heroAbout {
+    width: 100%;
+    padding: 20px;
+    margin: 0;
+}
+
+.heroName {
+    font-size: 42px;
+    color: white;
+}
+
+.infoHeading {
+    font-size: 26px;
+    color: #7c7c7c;
+    margin-bottom: 10px;
+}
+
+.infoContent {
+    color: #f2f2f2;
+}
+
+.aboutCategory {
+    padding: 0;
+    padding-bottom: 20px;
+    margin-bottom: 10px !important;
+    border-bottom: 1px solid #7c7c7c;
+}
+
+.heroResult {
+    display: none;
+    padding: 0;
+    margin: 0 !important;
+}
+
+
+@media only screen and (max-width: 768px) {
+    #heroForm {
+        width: 90%;
+    }
+}
