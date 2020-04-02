@@ -14,15 +14,16 @@ $(document).ready(function () {
     }, 3000);
 
     setTimeout(function () {
-        $(".codingHero").attr("src", "./assets/images/coding-hero-fly.png");
+        $(".codingHero").attr("src", "./assets/images/coding-hero-stance-3.png");
         $(".speechBubble").text("Use the search form above to find informations about your favorite superhero(es)!")
     }, 6000);
 
     setTimeout(function () {
         $(".speechBubble").css("display", "none");
+        $(".codingHero").attr("src", "./assets/images/coding-hero-fly.png");
         setInterval(function () {
-            $(".codingHero").css("bottom", "+=2px");
-        }, 50);
+            $(".codingHero").css("bottom", "+=5px");
+        }, 10);
     }, 10000);
 
     setTimeout(function () {

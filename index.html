@@ -5,6 +5,10 @@
     <meta charset="UTF-8">
     <title>Superhero B&B</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Roboto&display=swap" rel="stylesheet">
+
     <!-- UIkit CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.3.7/dist/css/uikit.min.css" />
     <!-- link to our style sheet -->
@@ -26,7 +30,10 @@
 
     <!-- Header-->
     <header class="uk-flex uk-flex-column uk-flex-middle">
-        <h1 class="uk-text-center">Superhero Background & Backgrounds</h1>
+        <h1 class="uk-text-center appLogo uk-position-relative">
+            <div>Superhero Background</div>
+            <div class="uk-position-absolute">& Backgrounds</div>
+        </h1>
         <form id="heroForm" class="uk-search uk-search-default">
             <a href="" class="uk-search-icon-flip" uk-search-icon></a>
             <input id="heroSearchInput" class="uk-search-input" type="search" placeholder="Search here!">
@@ -40,19 +47,6 @@
         <div class="uk-position-relative uk-width-1-1 uk-flex uk-flex-column uk-flex-middle uk-padding-small homeContent" uk-height-viewport="expand: true">
             <div class="speechBubble uk-padding-small uk-text-center">Hello! Welcome to Superhero Background & Backgrounds!</div>
             <img class="codingHero" src="./assets/images/coding-hero-stance.png" alt="Coding Hero">
-            <!-- <div class="uk-section uk-light uk-background-cover" style="background-image: url(./assets/images/textBackground.png)">
-                <div class="uk-container">
-                    <h3>Hello! Welcome to Superhero Background & Backgrounds!</h3>
-                    <div class="uk-grid-match uk-child-width-1-3@m textShadow" uk-grid>
-                        <div>
-                            <p>This application will return superhero information and backgrounds to you!
-                                Use the search form below to find these items about your favorite superhero(es)!
-                            </p>
-                        </div>
-                    </div>
-
-                </div>
-            </div> -->
         </div>
 
         <!-- Pagination -->
