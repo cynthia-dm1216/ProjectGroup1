@@ -182,9 +182,9 @@ $(document).ready(function () {
             // Get data from image api
             // Render data on DOM
 
-            // var queryname = $("#heroSearchInput").val().trim(); // Already declared previously
+            var dataName = $("*[data-index='1']").attr("data-name");
             var AccessKey = "JINdia7koUjq_pI2PJaRPDBiIJfg9sGoHF4a3t_2olw";
-            var queryUrl = "https://api.unsplash.com/search/photos/?client_id=" + AccessKey + "&query=" + queryName;
+            var queryUrl = "https://api.unsplash.com/search/photos/?client_id=" + AccessKey + "&query=" + dataName;
 
             jQuery.ajaxPrefilter(function (options) {
                 if (options.crossDomain && jQuery.support.cors) {
