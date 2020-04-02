@@ -182,9 +182,11 @@ $(document).ready(function () {
             // Get data from image api
             // Render data on DOM
 
-            // var queryname = $("#heroSearchInput").val().trim(); // Already declared previously
             var dataName = $("*[data-index='1']").attr("data-name");
+<<<<<<< HEAD
             //console.log(dataName);
+=======
+>>>>>>> e448d973f4bdf7e34ae95e9fd3d87d9969b046a2
             var AccessKey = "JINdia7koUjq_pI2PJaRPDBiIJfg9sGoHF4a3t_2olw";
             var queryUrl = "https://api.unsplash.com/search/photos/?client_id=" + AccessKey + "&query=" + dataName;
 
@@ -202,7 +204,7 @@ $(document).ready(function () {
             }).then(function (response) {
 
                 var result = response.results;
-                // console.log(result);
+                console.log(result);
                 // Create divs here
                 var imageContainer = $("<div>").addClass("uk-width-1-1 uk-padding-remove uk-margin-remove-top");
                 var headingTitle = $('<div>').addClass("infoHeading uk-text-bold uk-text-muted uk-padding-small").text("Wallpapers");
@@ -213,15 +215,18 @@ $(document).ready(function () {
                 // Loop through image results array, limit to 4
                 for (var i = 0; i < 4; i++) {
                     // Get image url and alt descriptions for each result
-                    var imageURL = result[i].urls.regular;
+                    var imageURL = result[i].urls.small;
                     var altDescription = result[i]["alt_description"];
                     // Crate image divs
                     var img = $('<img>').attr({ src: imageURL, alt: altDescription, width: "100%" });
+<<<<<<< HEAD
                     var imgSlide = $('<img>').attr({src:imageUrl,altDescription,width:"100%"});
                     //appending variables of slideshow
                   slideShowDiv.append(slideshowFadeDiv).append(slideShowItems);
                   slideShowDiv.prepend(slideshowFadeDiv).prepend(slideShowItems);
 
+=======
+>>>>>>> e448d973f4bdf7e34ae95e9fd3d87d9969b046a2
                     //append img uk
                     imageContainer.append(img);
                 }
@@ -241,12 +246,23 @@ $(document).ready(function () {
         $(".heroPageNum").removeClass("active");
         $(this).addClass("active");
         // Get the now active span's text
+<<<<<<< HEAD
         var activePageNum = $(".active").text();
        // console.log(activePageNum);
+=======
+        var activePageName = $(".active").text();
+        console.log(activePageName);
+>>>>>>> e448d973f4bdf7e34ae95e9fd3d87d9969b046a2
         // Change heroResult to matching data-index
         $(".heroResult").css("display", "none");
-        $("*[data-index=" + activePageNum + "]").css("display", "block");
+        $("*[data-name='" + activePageName + "']").css("display", "block");
     })
 
+    // Listen for an event on the search icon
+    $("#searchIcon").on("click", function(e) {
+        e.preventDefault();
+
+        // Render data
+    })
 
 })
