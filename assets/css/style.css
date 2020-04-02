@@ -42,8 +42,7 @@ header h1 {
     height: auto;
     font-size: 24px;
     margin-bottom: 40px;
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding: 20px;
 }
 
 .speechBubble:after {
@@ -95,6 +94,10 @@ header h1 {
     padding-left: 30px;
 }
 
+.userIcon {
+    display:none;
+}
+
 .heroPageNum {
     background-color: var(--red-color);
     padding: 10px 40px;
@@ -103,6 +106,7 @@ header h1 {
     border-radius: 4px;
     cursor: pointer;
 }
+
 .heroPageNum:hover {
     background-color: rgb(209, 35, 35);
 }

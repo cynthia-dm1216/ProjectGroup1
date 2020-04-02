@@ -133,7 +133,7 @@ $(document).ready(function () {
                     var powerDiv = $("<div>").addClass("infoContent");
                     var combatDiv = $("<div>").addClass("infoContent");
                     // Add texts
-                    heroPageNumSpan.text(heroResultContainer.attr("data-index"));
+                    heroPageNumSpan.text(heroResultContainer.attr("data-name"));
                     heroNameSpan.text(name);
                     publisherSpan.text(publisher);
                     biographyHeading.text("Biography");
