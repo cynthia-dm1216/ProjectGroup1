@@ -7,7 +7,6 @@ $(document).ready(function () {
     // GIVEN the application
     // WHEN I arrive on the home screen
     // THEN I am presented with an animation telling me about the application
-
     setTimeout(function () {
         $(".codingHero").attr("src", "./assets/images/coding-hero-stance-5.png");
         $(".speechBubble").text("This application will return superhero information and backgrounds to you!")
@@ -104,7 +103,7 @@ $(document).ready(function () {
                     var heroPageNumSpan = $("<span>").addClass("heroPageNum");
                     var userIconSpan = $("<span>").addClass("userIcon").attr("uk-icon", "user");
                     // Create divs and add classes
-                    var heroResultContainer = $("<div>").addClass("heroResult uk-width-1-1").attr("data-index", i + 1);
+                    var heroResultContainer = $("<div>").addClass("heroResult uk-width-1-1").attr({"data-index": i + 1, "data-name": name});
                     var heroHeadDiv = $("<div>").addClass("heroHead uk-width-1-1 uk-flex uk-flex-column uk-padding-remove-top");
                     var heroNameSpan = $("<span>").addClass("heroName uk-text-large");
                     var publisherSpan = $("<span>").addClass("publisher uk-text-muted");
