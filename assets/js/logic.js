@@ -200,9 +200,9 @@ $(document).ready(function () {
             }).then(function (response) {
 
                 var result = response.results;
-                console.log(result);
+                // console.log(result);
                 // Create divs here
-                var imageContainer = $("<div>").addClass("uk-width-1-1 uk-padding-remove uk-margin-remove-top");
+                var imageContainer = $("<div>").addClass("imgContainer uk-width-1-1 uk-padding-remove uk-margin-remove-top");
                 var headingTitle = $('<div>').addClass("infoHeading uk-text-bold uk-text-muted uk-padding-small").text("Wallpapers");
 
                 // Loop through image results array, limit to 4
@@ -232,7 +232,6 @@ $(document).ready(function () {
         $(this).addClass("active");
         // Get the now active span's text
         var activePageName = $(".active").text();
-        console.log(activePageName);
         // Change heroResult to matching data-index
         $(".heroResult").css("display", "none");
         $("*[data-name='" + activePageName + "']").css("display", "block");
