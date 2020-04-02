@@ -83,7 +83,7 @@ $(document).ready(function () {
             if (results.length > 1) {
                 // Create a div to hold the buttons
                 var heroPaginationDiv = $("<div>").addClass("uk-width-1-1 uk-padding-remove uk-visible-toggle uk-margin-remove-top").attr({ tabindex: "-1", "uk-slider": "" });
-                var heroPageNumsDiv = $("<div>").addClass("uk-slider-items uk-grid heroPageNums uk-text-large");
+                var heroPageNumsDiv = $("<div>").addClass("uk-slider-items uk-grid heroPageNums uk-text-large uk-flex uk-flex-center");
                 // Loop through the results
                 for (var i = 0; i < results.length; i++) {
                     // Get each result
@@ -193,9 +193,9 @@ $(document).ready(function () {
             // Get data from image api
             // Render data on DOM
 
-            // var queryname = $("#heroSearchInput").val().trim(); // Already declared previously
+            var dataName = $("*[data-index='1']").attr("data-name");
             var AccessKey = "JINdia7koUjq_pI2PJaRPDBiIJfg9sGoHF4a3t_2olw";
-            var queryUrl = "https://api.unsplash.com/search/photos/?client_id=" + AccessKey + "&query=" + queryName;
+            var queryUrl = "https://api.unsplash.com/search/photos/?client_id=" + AccessKey + "&query=" + dataName;
 
             jQuery.ajaxPrefilter(function (options) {
                 if (options.crossDomain && jQuery.support.cors) {
@@ -213,13 +213,13 @@ $(document).ready(function () {
                 var result = response.results;
                 // console.log(result);
                 // Create divs here
-                var imageContainer = $("<div>").addClass("uk-width-1-1 uk-padding-remove uk-margin-remove-top");
+                var imageContainer = $("<div>").addClass("imgContainer uk-width-1-1 uk-padding-remove uk-margin-remove-top");
                 var headingTitle = $('<div>').addClass("infoHeading uk-text-bold uk-text-muted uk-padding-small").text("Wallpapers");
 
                 // Loop through image results array, limit to 4
                 for (var i = 0; i < 4; i++) {
                     // Get image url and alt descriptions for each result
-                    var imageURL = result[i].urls.regular;
+                    var imageURL = result[i].urls.small;
                     var altDescription = result[i]["alt_description"];
                     // Crate image divs
                     var img = $('<img>').attr({ src: imageURL, alt: altDescription, width: "100%" });
@@ -242,12 +242,17 @@ $(document).ready(function () {
         $(".heroPageNum").removeClass("active");
         $(this).addClass("active");
         // Get the now active span's text
-        var activePageNum = $(".active").text();
-        console.log(activePageNum);
+        var activePageName = $(".active").text();
         // Change heroResult to matching data-index
         $(".heroResult").css("display", "none");
-        $("*[data-index=" + activePageNum + "]").css("display", "block");
+        $("*[data-name='" + activePageName + "']").css("display", "block");
     })
 
+    // Listen for an event on the search icon
+    $("#searchIcon").on("click", function(e) {
+        e.preventDefault();
+
+        // Render data
+    })
 
 })

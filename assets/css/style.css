@@ -85,11 +85,6 @@ header h1 {
     background-color: #212129;
 }
 
-.heroPagination {
-    overflow-x: hidden;
-    overflow-wrap: none;
-}
-
 .heroPageNums {
     padding-left: 30px;
 }
@@ -123,7 +118,8 @@ header h1 {
 }
 
 .heroImg {
-    width: 100%;
+    width: 300px;
+    margin-left: 20px;
 }
 
 .heroAbout {
@@ -158,8 +154,14 @@ header h1 {
 
 .heroResult {
     display: none;
+    max-width: 800px;
     padding: 0;
-    margin: 0 !important;
+    margin: 0 auto!important;
+}
+
+.imgContainer {
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 
@@ -167,4 +169,10 @@ header h1 {
     #heroForm {
         width: 90%;
     }
+
+    .heroImg {
+        width: 100%;
+        margin-left: 0;
+    }
+    
 }
