@@ -46,7 +46,7 @@ Interactive Mockup: [Interactive Mockup](https://xd.adobe.com/view/192bda5d-598a
 ![Result screen](assets/images/searchResult.png)
 
 ## Deployed Application
-[Superhero Background & Backgrounds](linkHere)
+[Superhero Background & Backgrounds](https://cynthia-dm1216.github.io/ProjectGroup1/)
 
 ## Screenshots
 ![Home Screen](linkHere)
