@@ -44,6 +44,17 @@ $(document).ready(function () {
     // Get data from superhero api for multiple results
     // Render data on DOM
 
+    // render music function
+    $(function () {
+        var audioElement = $('#audio'),
+            href = audioElement.children('a').attr('href');
+        $.template('audioTemplate', '<audio src="${src}" controls>');
+        if (Modernizr.audio.mp3) {
+            audioElement.empty();
+            $.tmpl('audioTemplate', {src: href}).prependTo(audioElement);
+        }
+        });
+
     $("#heroForm").on("submit", function (e) { // Change to target form and submit event when HTML is ready
         e.preventDefault();
 
