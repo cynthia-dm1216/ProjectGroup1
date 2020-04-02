@@ -8,7 +8,7 @@
     <!-- UIkit CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.3.7/dist/css/uikit.min.css" />
     <!-- link to our style sheet -->
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
 
     <!-- UIkit JS -->
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.3.7/dist/js/uikit.min.js"></script>
@@ -18,7 +18,7 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- My JS file -->
-    <script src="logic.js"></script>
+    <script src="./assets/js/logic.js"></script>
 
 </head>
 
@@ -43,7 +43,7 @@
     <div id="heroInfo" uk-grid>
         <!-- section & container set up for UIkit -->
         <div class="uk-section-default uk-width-1-1 uk-padding-remove">
-            <div class="uk-section uk-light uk-background-cover" style="background-image: url(textBackground.png)">
+            <div class="uk-section uk-light uk-background-cover" style="background-image: url(./assets/images/textBackground.png)">
                 <div class="uk-container">
                     <h3>Hello! Welcome to Superhero Background & Backgrounds!</h3>
                     <div class="uk-grid-match uk-child-width-1-3@m textShadow" uk-grid>
@@ -57,19 +57,34 @@
                 </div>
             </div>
         </div>
-        <!-- <div class="heroPagination uk-margin-remove uk-padding uk-text-center uk-text-bold">
-            <span class="heroPageNum active">1</span>
-            <span class="heroPageNum">2</span>
-            <span class="heroPageNum">3</span>
-            <span class="heroPageNum">4</span>
-            <span class="heroPageNum">5</span>
-            <span class="heroPageNum">6</span>
-            <span class="heroPageNum">7</span>
-            <span class="heroPageNum">8</span>
-            <span class="heroPageNum">9</span>
-            <span class="heroPageNum">10</span>
+
+        <!-- Pagination Hard coded data for testing UI -->
+        <!-- <div id="heroPagination" class="uk-padding-remove uk-visible-toggle uk-margin-remove-top" tabindex="-1" uk-slider>
+            <ul class="uk-slider-items uk-grid heroPageNums uk-text-large">
+                <li class="uk-padding uk-padding-remove-left uk-padding-remove-right"><span class="heroPageNum"><span
+                            class="userIcon" uk-icon="user"></span>1</span></li>
+                <li class="uk-padding uk-padding-remove-left uk-padding-remove-right"><span class="heroPageNum"><span
+                            class="userIcon" uk-icon="user"></span>2</span></li>
+                <li class="uk-padding uk-padding-remove-left uk-padding-remove-right"><span class="heroPageNum"><span
+                            class="userIcon" uk-icon="user"></span>3</span></li>
+                <li class="uk-padding uk-padding-remove-left uk-padding-remove-right"><span class="heroPageNum"><span
+                            class="userIcon" uk-icon="user"></span>4</span></li>
+                <li class="uk-padding uk-padding-remove-left uk-padding-remove-right"><span class="heroPageNum"><span
+                            class="userIcon" uk-icon="user"></span>5</span></li>
+                <li class="uk-padding uk-padding-remove-left uk-padding-remove-right"><span class="heroPageNum"><span
+                            class="userIcon" uk-icon="user"></span>6</span></li>
+                <li class="uk-padding uk-padding-remove-left uk-padding-remove-right"><span class="heroPageNum"><span
+                            class="userIcon" uk-icon="user"></span>7</span></li>
+                <li class="uk-padding uk-padding-remove-left uk-padding-remove-right"><span class="heroPageNum"><span
+                            class="userIcon" uk-icon="user"></span>8</span></li>
+                <li class="uk-padding uk-padding-remove-left uk-padding-remove-right"><span class="heroPageNum"><span
+                            class="userIcon" uk-icon="user"></span>9</span></li>
+                <li class="uk-padding uk-padding-remove-left uk-padding-remove-right"><span class="heroPageNum"><span
+                            class="userIcon" uk-icon="user"></span>10</span></li>
+            </ul>
         </div> -->
-        <!--
+
+        <!-- Hero result hardcoded for testing
         <div class="heroResult uk-width-1-1" data-index="1">
             <div class="heroHead uk-width-1-1 uk-flex uk-flex-column">
                 <span class="heroName uk-text-large">Spiderman</span>
@@ -106,8 +121,8 @@
                 </div>
             </div>
         </div> -->
-    </div>
 
+<<<<<<< HEAD
     <div uk-grid>
         <div class="uk-width-expand@m superPics">
             <h2>Wallpapers</h2>
@@ -116,8 +131,17 @@
             <img  class ="Superman" src="https://nationalpostcom.files.wordpress.com/2016/03/supermanfeature.jpg?quality=80&strip=all&w=780" alt="Superman"/>
         </div>
     </div>
+=======
+        <!-- Wallpaper images hardcoded for testing -->
+        <!-- <div class="uk-width-1-1 uk-padding-remove uk-margin-remove-top">
+            <div class="infoHeading uk-text-bold uk-text-muted uk-padding-small">Wallpapers</div>
+            <img src="wallTest.jpg" alt="imageTest1" />
+            <img src="wallTest2.jpg" alt="imageTest2" />
+        </div> -->
+>>>>>>> bc815c3384c25a8f6f96a3fc71acf44bd10f5f3e
+
+    </div>
 
 </body>
 
 </html>
-</body>
