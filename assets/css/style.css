@@ -85,11 +85,6 @@ header h1 {
     background-color: #212129;
 }
 
-.heroPagination {
-    overflow-x: hidden;
-    overflow-wrap: none;
-}
-
 .heroPageNums {
     padding-left: 30px;
 }
@@ -123,7 +118,8 @@ header h1 {
 }
 
 .heroImg {
-    width: 100%;
+    width: 300px;
+    margin-left: 20px;
 }
 
 .heroAbout {
@@ -173,4 +169,10 @@ header h1 {
     #heroForm {
         width: 90%;
     }
+
+    .heroImg {
+        width: 100%;
+        margin-left: 0;
+    }
+    
 }

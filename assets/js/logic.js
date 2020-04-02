@@ -72,7 +72,7 @@ $(document).ready(function () {
             if (results.length > 1) {
                 // Create a div to hold the buttons
                 var heroPaginationDiv = $("<div>").addClass("uk-width-1-1 uk-padding-remove uk-visible-toggle uk-margin-remove-top").attr({ tabindex: "-1", "uk-slider": "" });
-                var heroPageNumsDiv = $("<div>").addClass("uk-slider-items uk-grid heroPageNums uk-text-large");
+                var heroPageNumsDiv = $("<div>").addClass("uk-slider-items uk-grid heroPageNums uk-text-large uk-flex uk-flex-center");
                 // Loop through the results
                 for (var i = 0; i < results.length; i++) {
                     // Get each result
