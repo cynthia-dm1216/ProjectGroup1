@@ -23,12 +23,6 @@
 </head>
 
 <body>
-    <!-- <div class="container">
-        <h1>My Wall</h1>
-        <div id="buttons-view"></div>
-        <form id="wall-form">
-            <label for="wall-input">Add a Wallpaper</label>
-            <input type="text" id="wall-input"><br> -->
 
     <!-- Header-->
     <header class="uk-flex uk-flex-column uk-flex-middle">
@@ -40,10 +34,13 @@
     </header>
 
     <!-- Main Content -->
-    <div id="heroInfo" uk-grid>
-        <!-- section & container set up for UIkit -->
-        <div class="uk-section-default uk-width-1-1 uk-padding-remove">
-            <div class="uk-section uk-light uk-background-cover" style="background-image: url(./assets/images/textBackground.png)">
+    <section id="heroInfo" uk-grid>
+
+        <!-- Home screen content -->
+        <div class="uk-width-1-1 uk-flex uk-flex-column uk-flex-middle uk-padding-small homeContent" uk-height-viewport="expand: true">
+            <div class="speechBubble uk-padding-small uk-text-center">Hello! Welcome to Superhero Background & Backgrounds!</div>
+            <img class="codingHero" src="./assets/images/coding-hero-stance.png" alt="Coding Hero">
+            <!-- <div class="uk-section uk-light uk-background-cover" style="background-image: url(./assets/images/textBackground.png)">
                 <div class="uk-container">
                     <h3>Hello! Welcome to Superhero Background & Backgrounds!</h3>
                     <div class="uk-grid-match uk-child-width-1-3@m textShadow" uk-grid>
@@ -55,10 +52,11 @@
                     </div>
 
                 </div>
-            </div>
+            </div> -->
         </div>
 
-        <!-- Pagination Hard coded data for testing UI -->
+        <!-- Pagination -->
+        <!-- Hardcoded for testing UI -->
         <!-- <div id="heroPagination" class="uk-padding-remove uk-visible-toggle uk-margin-remove-top" tabindex="-1" uk-slider>
             <ul class="uk-slider-items uk-grid heroPageNums uk-text-large">
                 <li class="uk-padding uk-padding-remove-left uk-padding-remove-right"><span class="heroPageNum"><span
@@ -84,8 +82,9 @@
             </ul>
         </div> -->
 
-        <!-- Hero result hardcoded for testing
-        <div class="heroResult uk-width-1-1" data-index="1">
+        <!-- Superhero data result -->
+        <!-- Hardcoded for testing UI -->
+        <!-- <div class="heroResult uk-width-1-1" data-index="1">
             <div class="heroHead uk-width-1-1 uk-flex uk-flex-column">
                 <span class="heroName uk-text-large">Spiderman</span>
                 <span class="publisher uk-text-muted">Marvel Comics</span>
@@ -122,14 +121,15 @@
             </div>
         </div> -->
 
-        <!-- Wallpaper images hardcoded for testing -->
+        <!-- Unsplash images result -->
+        <!-- Hardcoded for testing UI -->
         <!-- <div class="uk-width-1-1 uk-padding-remove uk-margin-remove-top">
             <div class="infoHeading uk-text-bold uk-text-muted uk-padding-small">Wallpapers</div>
             <img src="wallTest.jpg" alt="imageTest1" />
             <img src="wallTest2.jpg" alt="imageTest2" />
         </div> -->
 
-    </div>
+    </section>
 
 </body>
 

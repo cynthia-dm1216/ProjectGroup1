@@ -9,6 +9,11 @@ html {
     --black-color: #2E2A2A;
 }
 
+body {
+    background-color: var(--black-color);
+    height: 100%;
+}
+
 header {
     background-color: var(--red-color);
     width: 100%;
@@ -24,13 +29,17 @@ header h1 {
     color: black;
 }
 
+.homeContent {
+    /* height: 100%;
+    min-height: 500px; */
+}
+
 .speechBubble {
-	position: relative;
-	background: #f2f2f2;
-    border-radius: 4px;
-    height: 200px;
-    font-size: 24px;
-    margin-bottom: 40px;
+	/* position: relative; */
+	background-color: #f4f4f4;
+    border-radius: 8px;
+    width: 500px;
+    height: 300px;
 }
 
 .speechBubble:after {
@@ -40,16 +49,12 @@ header h1 {
 	left: 50%;
 	width: 0;
 	height: 0;
-	border: 20px solid transparent;
-	border-top-color: #f2f2f2;
+	border: 22px solid transparent;
+	border-top-color: #f4f4f4;
 	border-bottom: 0;
 	border-right: 0;
-	margin-left: -10px;
-	margin-bottom: -20px;
-}
-
-.codingHero {
-    width: 200px;
+	margin-left: -11px;
+	margin-bottom: -22px;
 }
 
 #heroForm {
@@ -69,6 +74,7 @@ header h1 {
     width: 100%;
     margin: 0;
     background-color: #212129;
+    height: 100%;
 }
 
 .heroPagination {
