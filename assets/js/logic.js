@@ -23,16 +23,11 @@ $(document).ready(function () {
         setInterval(function () {
             $(".codingHero").css("bottom", "+=2px");
         }, 50);
-        var timer = setInterval(function () {
-            var seconds = 9;
-            seconds++
-            // check code below -- doesn't work
-            if (seconds == 15) {
-                clearInterval(timer);
-                $(".codingHero").animate({ opacity: "0" }, "slow")
-            }
-        }, 1000)
-    }, 9000);
+    }, 10000);
+
+    setTimeout(function () {
+        $(".codingHero").animate({ opacity: "0" }, "slow")
+    }, 17000);
 
     // Alexandra
     // WHEN I submit a search query 
