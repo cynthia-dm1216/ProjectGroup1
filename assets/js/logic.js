@@ -44,16 +44,23 @@ $(document).ready(function () {
     // Get data from superhero api for multiple results
     // Render data on DOM
 
-    // render music function
-    $(function () {
-        var audioElement = $('#audio'),
-            href = audioElement.children('a').attr('href');
-        $.template('audioTemplate', '<audio src="${src}" controls>');
-        if (Modernizr.audio.mp3) {
-            audioElement.empty();
-            $.tmpl('audioTemplate', {src: href}).prependTo(audioElement);
+    // Listen to a click event on the audio button
+    var audioElement = $("#audio");
+    var isPressed = false;
+    $(".audioBtn").on("click", function() {
+        if (isPressed == false) {
+            audioElement.attr("controls", "");
+            isPressed = true;
+            $(".audioBtn").attr("uk-icon", "icon: minus-circle; ratio: 2");
+            return isPressed;
+        } else {
+            audioElement.attr("controls", false);
+            isPressed = false;
+            $(".audioBtn").attr("uk-icon", "icon: play-circle; ratio: 2");
+            return isPressed;
         }
-        });
+    });
+
 
     $("#heroForm").on("submit", function (e) { // Change to target form and submit event when HTML is ready
         e.preventDefault();
@@ -114,7 +121,7 @@ $(document).ready(function () {
                     var heroPageNumSpan = $("<span>").addClass("heroPageNum");
                     var userIconSpan = $("<span>").addClass("userIcon").attr("uk-icon", "user");
                     // Create divs and add classes
-                    var heroResultContainer = $("<div>").addClass("heroResult uk-width-1-1").attr({"data-index": i + 1, "data-name": name});
+                    var heroResultContainer = $("<div>").addClass("heroResult uk-width-1-1").attr({ "data-index": i + 1, "data-name": name });
                     var heroHeadDiv = $("<div>").addClass("heroHead uk-width-1-1 uk-flex uk-flex-column uk-padding-remove-top");
                     var heroNameSpan = $("<span>").addClass("heroName uk-text-large");
                     var publisherSpan = $("<span>").addClass("publisher uk-text-muted");
@@ -249,7 +256,7 @@ $(document).ready(function () {
     })
 
     // Listen for an event on the search icon
-    $("#searchIcon").on("click", function(e) {
+    $("#searchIcon").on("click", function (e) {
         e.preventDefault();
 
         // Render data

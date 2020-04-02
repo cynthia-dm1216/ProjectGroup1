@@ -127,7 +127,15 @@
         </div> -->
 
     </section>
-    <a class="uk-position-fixed uk-position-small uk-position-bottom-right uk-overlay uk-overlay-default" id="audio" uk-icon="icon: play-circle; ratio: 2" href="./assets/music/JusticeLeagueSong.mp3" target="_blank"></a>
+
+    <!-- Audio -->
+    <div class="uk-position-fixed uk-position-bottom-right audioBtn" uk-icon="icon: play-circle; ratio: 2">
+        <audio id="audio" autoplay>
+            <source src="./assets/music/JusticeLeagueSong.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
 </body>
 
 </html>
