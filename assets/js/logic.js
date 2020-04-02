@@ -8,6 +8,27 @@ $(document).ready(function () {
     // WHEN I arrive on the home screen
     // THEN I am presented with an animation telling me about the application
 
+    setTimeout(function () {
+        $(".codingHero").attr("src", "./assets/images/coding-hero-stance-5.png");
+        $(".speechBubble").text("This application will return superhero information and backgrounds to you!")
+    }, 3000);
+
+    setTimeout(function () {
+        $(".codingHero").attr("src", "./assets/images/coding-hero-fly.png");
+        $(".speechBubble").text("Use the search form above to find informations about your favorite superhero(es)!")
+    }, 6000);
+
+    setTimeout(function () {
+        $(".speechBubble").css("display", "none");
+        setInterval(function () {
+            $(".codingHero").css("bottom", "+=2px");
+        }, 50);
+    }, 10000);
+
+    setTimeout(function () {
+        $(".codingHero").animate({ opacity: "0" }, "slow")
+    }, 17000);
+
     // Alexandra
     // WHEN I submit a search query 
     // THEN the page reloads and views information about the superhero
@@ -22,7 +43,7 @@ $(document).ready(function () {
     // THEN I am presented with the information of another result
     // Get data from superhero api for multiple results
     // Render data on DOM
-    
+
     $("#heroForm").on("submit", function (e) { // Change to target form and submit event when HTML is ready
         e.preventDefault();
 
@@ -50,7 +71,7 @@ $(document).ready(function () {
             // If there is more than 1 result
             if (results.length > 1) {
                 // Create a div to hold the buttons
-                var heroPaginationDiv = $("<div>").addClass("uk-width-1-1 uk-padding-remove uk-visible-toggle uk-margin-remove-top").attr({tabindex: "-1", "uk-slider": ""});
+                var heroPaginationDiv = $("<div>").addClass("uk-width-1-1 uk-padding-remove uk-visible-toggle uk-margin-remove-top").attr({ tabindex: "-1", "uk-slider": "" });
                 var heroPageNumsDiv = $("<div>").addClass("uk-slider-items uk-grid heroPageNums uk-text-large");
                 // Loop through the results
                 for (var i = 0; i < results.length; i++) {
