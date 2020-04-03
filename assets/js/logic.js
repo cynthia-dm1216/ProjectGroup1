@@ -126,7 +126,7 @@ $(document).ready(function () {
                     var heroNameSpan = $("<span>").addClass("heroName uk-text-large");
                     var publisherSpan = $("<span>").addClass("publisher uk-text-muted");
                     var imgEl = $("<img>").addClass("heroImg").attr({ "data-src": imageUrl, "alt": name, "uk-img": "" });
-                    var heroAboutDiv = $("<div>").addClass("heroAbout").attr("uk-grid", "");
+                    var heroAboutDiv = $("<div>").addClass("heroAbout uk-grid-small").attr("uk-grid", "");
                     var biographyDiv = $("<div>").addClass("aboutCategory uk-flex uk-flex-column uk-width-1-2@s");
                     var biographyHeading = $("<div>").addClass("infoHeading uk-text-bold");
                     var fullNameDiv = $("<div>").addClass("infoContent");
