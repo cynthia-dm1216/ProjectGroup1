@@ -118,8 +118,7 @@ header h1 {
 }
 
 .heroImg {
-    width: 300px;
-    margin-left: 20px;
+    padding-left: 0;
 }
 
 .heroAbout {
@@ -146,15 +145,16 @@ header h1 {
 }
 
 .aboutCategory {
-    padding: 0;
+    padding: 0 0 20px 20px;
     padding-bottom: 20px;
+    padding-left: 20px;
     margin-bottom: 10px !important;
     border-bottom: 1px solid #7c7c7c;
 }
 
 .heroResult {
     display: none;
-    max-width: 800px;
+    /* max-width: 800px; */
     padding: 0;
     margin: 0 auto!important;
 }
