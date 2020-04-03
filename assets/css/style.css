@@ -18,21 +18,16 @@ header {
     width: 100%;
 }
 
-header h1 {
+/* header h1 {
     color: #f2f2f2;
     margin-top: 20px;
     font-family: 'Comic Neue', cursive;
-}
+} */
 
-.appLogo div:last-child {
-    top: 14px;
-    left: 56px;
-    opacity: 0.5;
-}
-
-.textShadow {
-    text-shadow: 1px 1px yellow;
-    color: black;
+.appLogo {
+    padding-left: 0;
+    min-width: 300px;
+    max-width: 440px;
 }
 
 .speechBubble {
@@ -67,8 +62,10 @@ header h1 {
 }
 
 #heroForm {
-    width: 500px;
-    margin-bottom: 20px;
+    margin-top: 10px;
+    margin-bottom: 12px;
+    padding-left: 0;
+    max-width: 500px;
 }
 
 #heroSearchInput {
@@ -118,8 +115,7 @@ header h1 {
 }
 
 .heroImg {
-    width: 300px;
-    margin-left: 20px;
+    padding-left: 0;
 }
 
 .heroAbout {
@@ -146,15 +142,16 @@ header h1 {
 }
 
 .aboutCategory {
-    padding: 0;
+    padding: 0 0 20px 20px;
     padding-bottom: 20px;
+    padding-left: 20px;
     margin-bottom: 10px !important;
     border-bottom: 1px solid #7c7c7c;
 }
 
 .heroResult {
     display: none;
-    max-width: 800px;
+    /* max-width: 800px; */
     padding: 0;
     margin: 0 auto!important;
 }

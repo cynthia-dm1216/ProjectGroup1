@@ -123,16 +123,16 @@ $(document).ready(function () {
                 var heroHeadDiv = $("<div>").addClass("heroHead uk-width-1-1 uk-flex uk-flex-column uk-padding-remove-top");
                 var heroNameSpan = $("<span>").addClass("heroName uk-text-large")
                 var publisherSpan = $("<span>").addClass("publisher uk-text-muted");
-                var imgEl = $("<img>").addClass("heroImg").attr({ "data-src": imageUrl, "alt": name, "uk-img": "" });
-                var heroAboutDiv = $("<div>").addClass("heroAbout uk-grid-small").attr("uk-grid", "");
-                var biographyDiv = $("<div>").addClass("aboutCategory uk-flex uk-flex-column uk-width-1-2@s");
+                var imgEl = $("<img>").addClass("heroImg uk-width-1-2@s uk-width-1-5@m").attr({ "data-src": imageUrl, "alt": name, "uk-img": "" });
+                var heroAboutDiv = $("<div>").addClass("heroAbout").attr("uk-grid", "");
+                var biographyDiv = $("<div>").addClass("aboutCategory uk-flex uk-flex-column uk-width-1-2@s uk-width-2-5@m");
                 var biographyHeading = $("<div>").addClass("infoHeading uk-text-bold");
                 var fullNameDiv = $("<div>").addClass("infoContent");
                 var birthPlaceDiv = $("<div>").addClass("infoContent");
                 var firstAppearanceDiv = $("<div>").addClass("infoContent");
                 var alignmentDiv = $("<div>").addClass("infoContent");
                 var occupationDiv = $("<div>").addClass("infoContent");
-                var appearanceDiv = $("<div>").addClass("aboutCategory uk-flex uk-flex-column uk-width-1-4@s uk-width-1-2");
+                var appearanceDiv = $("<div>").addClass("aboutCategory uk-flex uk-flex-column uk-width-1-2 uk-width-1-5@m");
                 var appearanceHeading = $("<div>").addClass("infoHeading uk-text-bold");
                 var genderDiv = $("<div>").addClass("infoContent");
                 var raceDiv = $("<div>").addClass("infoContent");
@@ -140,7 +140,7 @@ $(document).ready(function () {
                 var weightDiv = $("<div>").addClass("infoContent");
                 var eyeColorDiv = $("<div>").addClass("infoContent");
                 var hairColorDiv = $("<div>").addClass("infoContent");
-                var powerStatsDiv = $("<div>").addClass("aboutCategory uk-flex uk-flex-column uk-width-1-4@s uk-width-1-2");
+                var powerStatsDiv = $("<div>").addClass("aboutCategory uk-flex uk-flex-column uk-width-1-2 uk-width-1-5@m");
                 var powerStatsHeading = $("<div>").addClass("infoHeading uk-text-bold");
                 var intelligenceDiv = $("<div>").addClass("infoContent");
                 var strengthDiv = $("<div>").addClass("infoContent");
@@ -178,9 +178,9 @@ $(document).ready(function () {
                 powerStatsDiv.append(powerStatsHeading).append(intelligenceDiv).append(strengthDiv).append(speedDiv).append(durabilityDiv).append(powerDiv).append(combatDiv);
                 appearanceDiv.append(appearanceHeading).append(genderDiv).append(raceDiv).append(heightDiv).append(weightDiv).append(eyeColorDiv).append(hairColorDiv);
                 biographyDiv.append(biographyHeading).append(fullNameDiv).append(birthPlaceDiv).append(firstAppearanceDiv).append(alignmentDiv).append(occupationDiv);
-                heroAboutDiv.append(biographyDiv).append(appearanceDiv).append(powerStatsDiv);
+                heroAboutDiv.append(imgEl).append(biographyDiv).append(appearanceDiv).append(powerStatsDiv);
                 heroHeadDiv.append(heroNameSpan).append(publisherSpan);
-                heroResultContainer.append(heroHeadDiv).append(imgEl).append(heroAboutDiv);
+                heroResultContainer.append(heroHeadDiv).append(heroAboutDiv);
                 $("#heroInfo").append(heroResultContainer);
             }
 

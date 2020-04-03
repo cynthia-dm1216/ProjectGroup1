@@ -30,12 +30,9 @@
 <body>
 
     <!-- Header-->
-    <header class="uk-flex uk-flex-column uk-flex-middle">
-        <h1 class="uk-text-center appLogo uk-position-relative">
-            <div>Superhero Background</div>
-            <div class="uk-position-absolute">& Backgrounds</div>
-        </h1>
-        <form id="heroForm" class="uk-search uk-search-default">
+    <header class="uk-flex uk-flex-middle uk-flex-around uk-padding-small uk-margin-remove" uk-grid>
+        <img class="appLogo uk-width-1-4@m uk-width-1-2@s" src="./assets/images/sbb-logo.png" alt="Superhero Background & Backgrounds logo" uk-img>
+        <form id="heroForm" class="uk-search uk-search-default uk-width-1-3@m uk-width-12@s">
             <a href="" id="searchIcon" class="uk-search-icon-flip" uk-search-icon></a>
             <input id="heroSearchInput" class="uk-search-input" type="search" placeholder="Search for a superhero!">
         </form>
@@ -86,10 +83,11 @@
                 <span class="heroName uk-text-large">Spiderman</span>
                 <span class="publisher uk-text-muted">Marvel Comics</span>
             </div>
-            <img data-src="https://cdn.gamer-network.net/2018/usgamer/SpiderMan-PS4-Header-06.jpg/EG11/thumbnail/1920x1080/format/jpg/quality/65/17-12-2018-spider-man-ps4-guide-tips-controls-photo-mode-difficulty.jpg"
-                alt="Spiderman" uk-img>
             <div class="heroAbout" uk-grid>
-                <div class="aboutCategory uk-flex uk-flex-column uk-width-1-2@s">
+                <img class="heroImg uk-width-1-2@s uk-width-1-5@m"
+                    data-src="https://cdn.gamer-network.net/2018/usgamer/SpiderMan-PS4-Header-06.jpg/EG11/thumbnail/1920x1080/format/jpg/quality/65/17-12-2018-spider-man-ps4-guide-tips-controls-photo-mode-difficulty.jpg"
+                    alt="Spiderman" uk-img>
+                <div class="aboutCategory uk-flex uk-flex-column uk-width-1-2@s uk-width-2-5@m">
                     <div class="infoHeading uk-text-bold uk-text-muted">Biography</div>
                     <div class="infoContent"><strong>Full name: </strong>Peter Parker</div>
                     <div class="infoContent"><strong>Birth place: </strong>New York, New York</div>
@@ -97,7 +95,7 @@
                     <div class="infoContent"><strong>Alignment: </strong>Good</div>
                     <div class="infoContent"><strong>Occupation: </strong>Freelance photographer, teacher</div>
                 </div>
-                <div class="aboutCategory uk-flex uk-flex-column uk-width-1-4@s uk-width-1-2">
+                <div class="aboutCategory uk-flex uk-flex-column uk-width-1-2 uk-width-1-5@m">
                     <div class="infoHeading uk-text-bold uk-text-muted">Appearance</div>
                     <div class="infoContent"><strong>Gender: </strong>Male</div>
                     <div class="infoContent"><strong>Race: </strong>Human</div>
@@ -106,7 +104,7 @@
                     <div class="infoContent"><strong>Eye color: </strong>Hazel</div>
                     <div class="infoContent"><strong>Hair color: </strong>Brown</div>
                 </div>
-                <div class="aboutCategory uk-flex uk-flex-column uk-width-1-4@s uk-width-1-2">
+                <div class="aboutCategory uk-flex uk-flex-column uk-width-1-2 uk-width-1-5@m">
                     <div class="infoHeading uk-text-bold uk-text-muted">Power stats</div>
                     <div class="infoContent"><strong>Intelligence: </strong>90</div>
                     <div class="infoContent"><strong>Strength: </strong>55</div>
