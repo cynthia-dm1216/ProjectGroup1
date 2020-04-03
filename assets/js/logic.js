@@ -116,12 +116,12 @@ $(document).ready(function () {
                 var combat = hero.powerstats.combat;
                 // Create a button for each result
                 var sliderItemLi = $("<li>").addClass("uk-padding uk-padding-remove-left uk-padding-remove-right");
-                var heroPageNumSpan = $("<span>").addClass("heroPageNum");
+                var heroPageNumSpan = $("<span>").addClass("heroPageNum").attr({"data-indexBtn": i + 1, "data-nameBtn": name});
                 var userIconSpan = $("<span>").addClass("userIcon").attr("uk-icon", "user");
                 // Create divs and add classes
                 var heroResultContainer = $("<div>").addClass("heroResult uk-width-1-1").attr({ "data-index": i + 1, "data-name": name });
                 var heroHeadDiv = $("<div>").addClass("heroHead uk-width-1-1 uk-flex uk-flex-column uk-padding-remove-top");
-                var heroNameSpan = $("<span>").addClass("heroName uk-text-large");
+                var heroNameSpan = $("<span>").addClass("heroName uk-text-large")
                 var publisherSpan = $("<span>").addClass("publisher uk-text-muted");
                 var imgEl = $("<img>").addClass("heroImg").attr({ "data-src": imageUrl, "alt": name, "uk-img": "" });
                 var heroAboutDiv = $("<div>").addClass("heroAbout uk-grid-small").attr("uk-grid", "");
@@ -235,7 +235,7 @@ $(document).ready(function () {
             var headingTitle = $('<div>').addClass("infoHeading uk-text-bold uk-text-muted uk-padding-small").text("Wallpapers");
 
             if (result == 0) {
-                imageContainer.append($("<p>").addClass("uk-padding-small").text("Sorry! No images found for " + dataName));
+                imageContainer.append($("<p>").addClass("uk-padding uk-padding-remove-top uk-margin-remove-top").text("Sorry! No images found for " + dataName));
             } else {
                 // Loop through image results array, limit to 4
                 for (var i = 0; i < 4; i++) {
@@ -261,10 +261,10 @@ $(document).ready(function () {
         // Delete image container first
         $(".imgContainer").remove();
         // Get the now active span's text
-        var activePageName = $(".active").text();
+        var activePageNum = $(".active").attr("data-indexBtn");
         // Change heroResult to matching data-index
         $(".heroResult").css("display", "none");
-        $("*[data-name='" + activePageName + "']").css("display", "block");
+        $("*[data-index='" + activePageNum + "']").css("display", "block");
 
         // Show wallpaper images result
         showWallpapers();
