@@ -167,15 +167,16 @@ header h1 {
 .audioBtn {
     bottom: 20px;
     right: 20px;
-    background-color: rgb(255, 255, 255);
+    background-color: var(--red-color);
     padding: 10px;
-    border-radius: 30px;
+    border-radius: 38px;
     box-shadow: 2px 2px 4px rgb(0, 0, 0);
+    color: #f2f2f2;
     cursor: pointer;
 }
 
 .audioBtn:hover {
-    color: rgb(36, 253, 181);
+    color: rgb(121, 252, 245);
 }
 
 
@@ -187,6 +188,9 @@ header h1 {
     .heroImg {
         width: 100%;
         margin-left: 0;
+    }    
+
+    #audio {
+        width: 240px;
     }
-    
 }
