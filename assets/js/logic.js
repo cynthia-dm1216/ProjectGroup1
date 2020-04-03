@@ -234,15 +234,19 @@ $(document).ready(function () {
             var imageContainer = $("<div>").addClass("imgContainer uk-width-1-1 uk-padding-remove uk-margin-remove-top");
             var headingTitle = $('<div>').addClass("infoHeading uk-text-bold uk-text-muted uk-padding-small").text("Wallpapers");
 
-            // Loop through image results array, limit to 4
-            for (var i = 0; i < 4; i++) {
-                // Get image url and alt descriptions for each result
-                var imageURL = result[i].urls.small;
-                var altDescription = result[i]["alt_description"];
-                // Crate image divs
-                var img = $('<img>').attr({ src: imageURL, alt: altDescription, width: "100%" });
-                //append img uk
-                imageContainer.append(img);
+            if (result == 0) {
+                imageContainer.append($("<p>").addClass("uk-padding-small").text("Sorry! No images found for " + dataName));
+            } else {
+                // Loop through image results array, limit to 4
+                for (var i = 0; i < 4; i++) {
+                    // Get image url and alt descriptions for each result
+                    var imageURL = result[i].urls.small;
+                    var altDescription = result[i]["alt_description"];
+                    // Crate image divs
+                    var img = $('<img>').attr({ src: imageURL, alt: altDescription, width: "100%" });
+                    //append img uk
+                    imageContainer.append(img);
+                }
             }
             imageContainer.prepend(headingTitle);
             $("#heroInfo").append(imageContainer);
