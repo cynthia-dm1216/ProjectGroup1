@@ -30,12 +30,9 @@
 <body>
 
     <!-- Header-->
-    <header class="uk-flex uk-flex-column uk-flex-middle">
-        <h1 class="uk-text-center appLogo uk-position-relative">
-            <div>Superhero Background</div>
-            <div class="uk-position-absolute">& Backgrounds</div>
-        </h1>
-        <form id="heroForm" class="uk-search uk-search-default">
+    <header class="uk-flex uk-flex-middle uk-flex-around uk-padding-small uk-margin-remove" uk-grid>
+        <img class="appLogo uk-width-1-4@m uk-width-1-2@s" src="./assets/images/sbb-logo.png" alt="Superhero Background & Backgrounds logo" uk-img>
+        <form id="heroForm" class="uk-search uk-search-default uk-width-1-3@m uk-width-12@s">
             <a href="" id="searchIcon" class="uk-search-icon-flip" uk-search-icon></a>
             <input id="heroSearchInput" class="uk-search-input" type="search" placeholder="Search for a superhero!">
         </form>
@@ -81,7 +78,7 @@
 
         <!-- Superhero data result -->
         <!-- Hardcoded for testing UI -->
-        <div class="heroResult uk-width-1-1" data-index="1">
+        <!-- <div class="heroResult uk-width-1-1" data-index="1">
             <div class="heroHead uk-width-1-1 uk-flex uk-flex-column">
                 <span class="heroName uk-text-large">Spiderman</span>
                 <span class="publisher uk-text-muted">Marvel Comics</span>
@@ -117,7 +114,7 @@
                     <div class="infoContent"><strong>Combat: </strong>85</div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <!-- Unsplash images result -->
         <!-- Hardcoded for testing UI -->
