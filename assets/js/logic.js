@@ -242,6 +242,9 @@ $(document).ready(function () {
             // Create divs
             var imageContainer = $("<div>").addClass("imgContainer uk-width-1-1 uk-padding-remove uk-margin-remove-top");
             var headingTitle = $('<div>').addClass("infoHeading uk-text-bold uk-text-muted uk-padding-small").text("Wallpapers");
+            var slideitemsUl = $("<ul>").addClass("uk-slideshow-items");
+            var previousslide = $("<a>").addClass("uk-position-center-left uk-position-small uk-hidden-hover").attr({ href: "#", "uk-slidenav-previous": "", "uk-slideshow-item": "previous" });
+            var nextslide = $("<a>").addClass("uk-position-center-right uk-position-small uk-hidden-hover").attr({ href: "#", "uk-slidenav-next": "", "uk-slideshow-item": "next" });
             // If no image results
             if (totalNum === 0) {
                 // Then present an appropriate message
@@ -268,11 +271,22 @@ $(document).ready(function () {
                 var img = $('<img>').attr({ src: imageURL, alt: altDescription, width: "100%" });
                 // Append img to the container
                 imageContainer.append(img);
+                //creating classes and divs for slideshow imgage
+                var slideimg = $("<img>").attr({ src: imageURL, alt: altDescription, width: "100%", ukCover: "" });
+                var liElement = $("<li>")
+                liElement.append(slideimg);
+                slideitemsUl.append(liElement);
             }
+
             // Prepend the heading to the container
             imageContainer.prepend(headingTitle);
             // Append the container to the heroInfo section
             $("#heroInfo").append(imageContainer);
+            // created a SlideShow div and added class
+            var slideShowDiv = $("<div>").addClass("uk-position-relative uk-visible-toggle uk-light").attr({ tabindex: "-1", "uk-slideshow": "" });
+            slideShowDiv.append(headingTitle).append(slideitemsUl)
+            slideShowDiv.append(previousslide).append(nextslide);
+            $("#heroInfo").append(slideShowDiv);
         });
     }
 
