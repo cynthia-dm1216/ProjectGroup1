@@ -48,7 +48,7 @@ $(document).ready(function () {
             // Switch the icon of the audioBtn
             $(".audioBtn").attr("uk-icon", "icon: minus-circle; ratio: 2");
             return isPressed;
-        // At second click
+            // At second click
         } else {
             // Remove the controls attribute
             audioElement.attr("controls", false);
@@ -233,26 +233,37 @@ $(document).ready(function () {
             method: "GET"
             // After data comes back from API
         }).then(function (response) {
-
+            var totalNum = response.total;
             var result = response.results;
             // Create divs
             var imageContainer = $("<div>").addClass("imgContainer uk-width-1-1 uk-padding-remove uk-margin-remove-top");
             var headingTitle = $('<div>').addClass("infoHeading uk-text-bold uk-text-muted uk-padding-small").text("Wallpapers");
             // If no image results
-            if (result == 0) {
+            if (totalNum === 0) {
                 // Then present an appropriate message
                 imageContainer.append($("<p>").addClass("uk-padding uk-padding-remove-top uk-margin-remove-top").text("Sorry! No images found for " + dataName));
+            } else if (totalNum < 4) {
+                // Loop through image results array
+                for (var i = 0; i < result.length; i++) {
+                    // Render images
+                    renderImages();
+                }
             } else {
                 // Loop through image results array, limit to 4
                 for (var i = 0; i < 4; i++) {
-                    // Get image url and alt descriptions for each result
-                    var imageURL = result[i].urls.small;
-                    var altDescription = result[i]["alt_description"];
-                    // Crate image element
-                    var img = $('<img>').attr({ src: imageURL, alt: altDescription, width: "100%" });
-                    // Append img to the container
-                    imageContainer.append(img);
+                    // Render images
+                    renderImages();
                 }
+            }
+            // Create a function to render the images
+            function renderImages() {
+                // Get image url and alt descriptions for each result
+                var imageURL = result[i].urls.small;
+                var altDescription = result[i]["alt_description"];
+                // Crate image element
+                var img = $('<img>').attr({ src: imageURL, alt: altDescription, width: "100%" });
+                // Append img to the container
+                imageContainer.append(img);
             }
             // Prepend the heading to the container
             imageContainer.prepend(headingTitle);
