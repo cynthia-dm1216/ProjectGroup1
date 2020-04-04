@@ -244,8 +244,7 @@ $(document).ready(function () {
                 //$("#heroInfo").append(imageContainer);
                 // created a SlideShow div and added class
                 var slideShowDiv = $("<div>").addClass("uk-position-relative uk-visible-toggle uk-light").attr({ tabindex: "-1", "uk-slideshow": "" });
-                var imageCont = $("<div>").addClass("imageContainer")
-                slideShowDiv.append(headingTitle).append(slideitemsUl).append(imageCont);
+                slideShowDiv.append(headingTitle).append(slideitemsUl)
                 slideShowDiv.append(previousslide).append(nextslide);
                 $("#heroInfo").append(slideShowDiv);
             });
