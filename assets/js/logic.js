@@ -268,7 +268,7 @@ $(document).ready(function () {
                 var imageURL = result[i].urls.small;
                 var altDescription = result[i]["alt_description"];
                 // Crate image element
-                var slideImg = $("<img>").attr({ src: imageURL, alt: altDescription, width: "100%", ukCover: "" });
+                var slideImg = $("<img>").attr({ src: imageURL, alt: altDescription, width: "100%", "uk-cover": "" });
                 var liElement = $("<li>")
                 // Append img to the container               
                 liElement.append(slideImg);
@@ -280,7 +280,7 @@ $(document).ready(function () {
             // Append the container to the heroInfo section
             $("#heroInfo").append(imageContainer);
             // Create a slideShow div and added class
-            var slideShowDiv = $("<div>").addClass("uk-position-relative uk-visible-toggle uk-light").attr({ tabindex: "-1", "uk-slideshow": "" });
+            var slideShowDiv = $("<div>").addClass("uk-position-relative uk-visible-toggle uk-light").attr({ tabindex: "-1", "uk-slideshow":  "ratio: 1:1" });
             // Append divs
             slideShowDiv.append(slideitemsUl);
             slideShowDiv.append(previousslide).append(nextslide);
