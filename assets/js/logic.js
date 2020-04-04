@@ -241,10 +241,11 @@ $(document).ready(function () {
             var result = response.results;
             // Create divs
             var imageContainer = $("<div>").addClass("imgContainer uk-width-1-1 uk-padding-remove uk-margin-remove-top");
+            var slideShowDiv = $("<div>").addClass("uk-position-relative uk-visible-toggle uk-light").attr({ tabindex: "-1", "uk-slideshow": "ratio: 1:1" });
             var headingTitle = $('<div>').addClass("infoHeading uk-text-bold uk-text-muted uk-padding-small").text("Wallpapers Slideshow");
             var slideitemsUl = $("<ul>").addClass("uk-slideshow-items");
-            var previousslide = $("<a>").addClass("uk-position-center-left uk-position-small uk-hidden-hover").attr({ href: "#", "uk-slidenav-previous": "", "uk-slideshow-item": "previous" });
-            var nextslide = $("<a>").addClass("uk-position-center-right uk-position-small uk-hidden-hover").attr({ href: "#", "uk-slidenav-next": "", "uk-slideshow-item": "next" });
+            var previousSlide = $("<a>").addClass("uk-position-center-left uk-position-small uk-hidden-hover").attr({ href: "#", "uk-slidenav-previous": "", "uk-slideshow-item": "previous" });
+            var nextSlide = $("<a>").addClass("uk-position-center-right uk-position-small uk-hidden-hover").attr({ href: "#", "uk-slidenav-next": "", "uk-slideshow-item": "next" });
             // If no image results
             if (totalNum === 0) {
                 // Then present an appropriate message
@@ -255,13 +256,18 @@ $(document).ready(function () {
                     // Render images
                     renderImages();
                 }
+                appendDivs();
             } else {
                 // Loop through image results array, limit to 4
                 for (var i = 0; i < 4; i++) {
                     // Render images
                     renderImages();
                 }
+                appendDivs();
             }
+            // Prepend/Append divs
+            imageContainer.prepend(headingTitle);
+            $("#heroInfo").append(imageContainer);
             // Create a function to render the images
             function renderImages() {
                 // Get image url and alt descriptions for each result
@@ -274,18 +280,13 @@ $(document).ready(function () {
                 liElement.append(slideImg);
                 slideitemsUl.append(liElement);
             }
-
-            // Prepend the heading to the container
-            imageContainer.prepend(headingTitle);
-            // Append the container to the heroInfo section
-            $("#heroInfo").append(imageContainer);
-            // Create a slideShow div and added class
-            var slideShowDiv = $("<div>").addClass("uk-position-relative uk-visible-toggle uk-light").attr({ tabindex: "-1", "uk-slideshow":  "ratio: 1:1" });
-            // Append divs
-            slideShowDiv.append(slideitemsUl);
-            slideShowDiv.append(previousslide).append(nextslide);
-            imageContainer.append(slideShowDiv)
-            $("#heroInfo").append(imageContainer);
+            // Create a function to append/prepend divs
+            function appendDivs() {
+                // Append divs
+                slideShowDiv.append(slideitemsUl);
+                slideShowDiv.append(previousSlide).append(nextSlide);
+                imageContainer.append(slideShowDiv)
+            }
         });
     }
 
