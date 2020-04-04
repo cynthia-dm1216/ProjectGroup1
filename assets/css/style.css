@@ -85,11 +85,6 @@ header h1 {
     background-color: #212129;
 }
 
-.heroPagination {
-    overflow-x: hidden;
-    overflow-wrap: none;
-}
-
 .heroPageNums {
     padding-left: 30px;
 }
@@ -123,7 +118,8 @@ header h1 {
 }
 
 .heroImg {
-    width: 100%;
+    width: 300px;
+    margin-left: 20px;
 }
 
 .heroAbout {
@@ -158,13 +154,55 @@ header h1 {
 
 .heroResult {
     display: none;
+    max-width: 800px;
     padding: 0;
-    margin: 0 !important;
+    margin: 0 auto!important;
+}
+
+.imgContainer {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: blue;
+}
+.imageContainer{
+    margin-top: 0;
+    padding: 0;
+    
+}
+.itemContainer{
+    margin: 0 auto;
+    padding: 0;
+    max-width: 800px;
+
+}
+
+.audioBtn {
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--red-color);
+    padding: 10px;
+    border-radius: 38px;
+    box-shadow: 2px 2px 4px rgb(0, 0, 0);
+    color: #f2f2f2;
+    cursor: pointer;
+}
+
+.audioBtn:hover {
+    color: rgb(121, 252, 245);
 }
 
 
 @media only screen and (max-width: 768px) {
     #heroForm {
         width: 90%;
+    }
+
+    .heroImg {
+        width: 100%;
+        margin-left: 0;
+    }    
+
+    #audio {
+        width: 240px;
     }
 }

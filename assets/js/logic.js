@@ -44,6 +44,24 @@ $(document).ready(function () {
     // Get data from superhero api for multiple results
     // Render data on DOM
 
+    // Listen to a click event on the audio button
+    var audioElement = $("#audio");
+    var isPressed = false;
+    $(".audioBtn").on("click", function () {
+        if (isPressed == false) {
+            audioElement.attr("controls", "");
+            isPressed = true;
+            $(".audioBtn").attr("uk-icon", "icon: minus-circle; ratio: 2");
+            return isPressed;
+        } else {
+            audioElement.attr("controls", false);
+            isPressed = false;
+            $(".audioBtn").attr("uk-icon", "icon: play-circle; ratio: 2");
+            return isPressed;
+        }
+    });
+
+
     $("#heroForm").on("submit", function (e) { // Change to target form and submit event when HTML is ready
         e.preventDefault();
 
@@ -72,7 +90,7 @@ $(document).ready(function () {
             if (results.length > 1) {
                 // Create a div to hold the buttons
                 var heroPaginationDiv = $("<div>").addClass("uk-width-1-1 uk-padding-remove uk-visible-toggle uk-margin-remove-top").attr({ tabindex: "-1", "uk-slider": "" });
-                var heroPageNumsDiv = $("<div>").addClass("uk-slider-items uk-grid heroPageNums uk-text-large");
+                var heroPageNumsDiv = $("<div>").addClass("uk-slider-items uk-grid heroPageNums uk-text-large uk-flex uk-flex-center");
                 // Loop through the results
                 for (var i = 0; i < results.length; i++) {
                     // Get each result
@@ -108,7 +126,7 @@ $(document).ready(function () {
                     var heroNameSpan = $("<span>").addClass("heroName uk-text-large");
                     var publisherSpan = $("<span>").addClass("publisher uk-text-muted");
                     var imgEl = $("<img>").addClass("heroImg").attr({ "data-src": imageUrl, "alt": name, "uk-img": "" });
-                    var heroAboutDiv = $("<div>").addClass("heroAbout").attr("uk-grid", "");
+                    var heroAboutDiv = $("<div>").addClass("heroAbout uk-grid-small").attr("uk-grid", "");
                     var biographyDiv = $("<div>").addClass("aboutCategory uk-flex uk-flex-column uk-width-1-2@s");
                     var biographyHeading = $("<div>").addClass("infoHeading uk-text-bold");
                     var fullNameDiv = $("<div>").addClass("infoContent");
@@ -200,22 +218,36 @@ $(document).ready(function () {
             }).then(function (response) {
 
                 var result = response.results;
-                console.log(result);
+                // console.log(result);
                 // Create divs here
-                var imageContainer = $("<div>").addClass("uk-width-1-1 uk-padding-remove uk-margin-remove-top");
+                //var imageContainer = $("<div>").addClass("imgContainer uk-width-1-1 uk-padding-remove uk-margin-remove-top");
                 var headingTitle = $('<div>').addClass("infoHeading uk-text-bold uk-text-muted uk-padding-small").text("Wallpapers");
+                var slideitemsUl = $("<ul>").addClass("uk-slideshow-items");
+                var previousslide = $("<a>").addClass("uk-position-center-left uk-position-small uk-hidden-hover").attr({ href: "#", "uk-slidenav-previous": "", "uk-slideshow-item": "previous" });
+                var nextslide = $("<a>").addClass("uk-position-center-right uk-position-small uk-hidden-hover").attr({ href: "#", "uk-slidenav-next": "", "uk-slideshow-item": "next" });
                 // Loop through image results array, limit to 4
                 for (var i = 0; i < 4; i++) {
                     // Get image url and alt descriptions for each result
-                    var imageURL = result[i].urls.small;
+                    var imageURL = result[i].urls.regular;
                     var altDescription = result[i]["alt_description"];
                     // Crate image divs
-                    var img = $('<img>').attr({ src: imageURL, alt: altDescription, width: "100%" });
+                    // var img = $('<img>').attr({ src: imageURL, alt: altDescription, width: "100%" });
                     //append img uk
-                    imageContainer.append(img);
-                    }
-                imageContainer.prepend(headingTitle);
-                $("#heroInfo").append(imageContainer);
+                    //imageContainer.append(img);
+                    //creating classes and divs for slideshow imgage
+                    var slideimg = $("<img>").attr({ src: imageURL, alt: altDescription, width: "100%", ukCover: "" });
+                    var liElement = $("<li>")
+                    liElement.append(slideimg);
+                    slideitemsUl.append(liElement);
+                }
+                //imageContainer.prepend(headingTitle);
+                //$("#heroInfo").append(imageContainer);
+                // created a SlideShow div and added class
+                var slideShowDiv = $("<div>").addClass("uk-position-relative uk-visible-toggle uk-light").attr({ tabindex: "-1", "uk-slideshow": "" });
+                var imageCont = $("<div>").addClass("imageContainer")
+                slideShowDiv.append(headingTitle).append(slideitemsUl).append(imageCont);
+                slideShowDiv.append(previousslide).append(nextslide);
+                $("#heroInfo").append(slideShowDiv);
             });
 
         })
@@ -231,14 +263,13 @@ $(document).ready(function () {
         $(this).addClass("active");
         // Get the now active span's text
         var activePageName = $(".active").text();
-        console.log(activePageName);
         // Change heroResult to matching data-index
         $(".heroResult").css("display", "none");
         $("*[data-name='" + activePageName + "']").css("display", "block");
     })
 
     // Listen for an event on the search icon
-    $("#searchIcon").on("click", function(e) {
+    $("#searchIcon").on("click", function (e) {
         e.preventDefault();
 
         // Render data
