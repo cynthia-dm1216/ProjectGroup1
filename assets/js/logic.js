@@ -241,7 +241,10 @@ $(document).ready(function () {
             var result = response.results;
             // Create divs
             var imageContainer = $("<div>").addClass("imgContainer uk-width-1-1 uk-padding-remove uk-margin-remove-top");
-            var headingTitle = $('<div>').addClass("infoHeading uk-text-bold uk-text-muted uk-padding-small").text("Wallpapers");
+            var headingTitle = $('<div>').addClass("infoHeading uk-text-bold uk-text-muted uk-padding-small").text("Wallpapers Slideshow");
+            var slideitemsUl = $("<ul>").addClass("uk-slideshow-items");
+            var previousslide = $("<a>").addClass("uk-position-center-left uk-position-small uk-hidden-hover").attr({ href: "#", "uk-slidenav-previous": "", "uk-slideshow-item": "previous" });
+            var nextslide = $("<a>").addClass("uk-position-center-right uk-position-small uk-hidden-hover").attr({ href: "#", "uk-slidenav-next": "", "uk-slideshow-item": "next" });
             // If no image results
             if (totalNum === 0) {
                 // Then present an appropriate message
@@ -265,13 +268,23 @@ $(document).ready(function () {
                 var imageURL = result[i].urls.small;
                 var altDescription = result[i]["alt_description"];
                 // Crate image element
-                var img = $('<img>').attr({ src: imageURL, alt: altDescription, width: "100%" });
-                // Append img to the container
-                imageContainer.append(img);
+                var slideImg = $("<img>").attr({ src: imageURL, alt: altDescription, width: "100%", "uk-cover": "" });
+                var liElement = $("<li>")
+                // Append img to the container               
+                liElement.append(slideImg);
+                slideitemsUl.append(liElement);
             }
+
             // Prepend the heading to the container
             imageContainer.prepend(headingTitle);
             // Append the container to the heroInfo section
+            $("#heroInfo").append(imageContainer);
+            // Create a slideShow div and added class
+            var slideShowDiv = $("<div>").addClass("uk-position-relative uk-visible-toggle uk-light").attr({ tabindex: "-1", "uk-slideshow":  "ratio: 1:1" });
+            // Append divs
+            slideShowDiv.append(slideitemsUl);
+            slideShowDiv.append(previousslide).append(nextslide);
+            imageContainer.append(slideShowDiv)
             $("#heroInfo").append(imageContainer);
         });
     }
