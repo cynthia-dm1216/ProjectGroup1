@@ -70,6 +70,10 @@ $(document).ready(function () {
     // Listen to a click event on the heroForm if the icon is clicked
     $("#heroForm").on("click", "#searchIcon", function (e) {
         e.preventDefault();
+        // Ignore if input field is empty
+        if ($("#heroSearchInput").val() == "") {
+            return;
+        }
         // Render superhero data
         renderHeroData();
     })
