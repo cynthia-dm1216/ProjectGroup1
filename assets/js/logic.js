@@ -1,70 +1,81 @@
 $(document).ready(function () {
 
-    // User story
-    // As a superhero fanatic, I want to search for my favorite superhero so I can learn more about them.
-
-    // Acceptance Criteria
-    // GIVEN the application
-    // WHEN I arrive on the home screen
-    // THEN I am presented with an animation telling me about the application
+    // Set timeouts for homescreen animation
+    // First timeout at 3 seconds
     setTimeout(function () {
+        // Change the graphic
         $(".codingHero").attr("src", "./assets/images/coding-hero-stance-5.png");
+        // Change the speech bubble text
         $(".speechBubble").text("This application will return superhero information and backgrounds to you!")
     }, 3000);
-
+    // Second timeout at 6 seconds
     setTimeout(function () {
+        // Change the graphic
         $(".codingHero").attr("src", "./assets/images/coding-hero-stance-3.png");
+        // Change the speech bubble text
         $(".speechBubble").text("Use the search form above to find informations about your favorite superhero(es)!")
     }, 6000);
-
+    // Third timeout at 10 seconds
     setTimeout(function () {
+        // Hide the speech bubble
         $(".speechBubble").css("display", "none");
+        // Change the graphic
         $(".codingHero").attr("src", "./assets/images/coding-hero-fly.png");
+        // Animate the graphic to move up
         setInterval(function () {
             $(".codingHero").css("bottom", "+=5px");
         }, 10);
     }, 10000);
-
+    // Fourth timeout at 17 seconds
     setTimeout(function () {
+        // Have the graphic fade out
         $(".codingHero").animate({ opacity: "0" }, "slow")
     }, 17000);
 
-    // Alexandra
-    // WHEN I submit a search query 
-    // THEN the page reloads and views information about the superhero
-    // On form submit, take value of input field
-    // Get data from superhero api for single result
-    // Render data on DOM
 
-    // Alvin
-    // When I receive multiple results for a search query
-    // THEN the page presents me with buttons to browse through them
-    // When I click on a button of a multiple search result
-    // THEN I am presented with the information of another result
-    // Get data from superhero api for multiple results
-    // Render data on DOM
-
-    // Listen to a click event on the audio button
+    // Target the audio element
     var audioElement = $("#audio");
+    // Create a boolean for when button is pressed
     var isPressed = false;
+    // Listen for a click event on the audio button
     $(".audioBtn").on("click", function () {
+        // At first click
         if (isPressed == false) {
+            // Add the controls attribute
             audioElement.attr("controls", "");
+            // Change isPressed to true
             isPressed = true;
+            // Switch the icon of the audioBtn
             $(".audioBtn").attr("uk-icon", "icon: minus-circle; ratio: 2");
             return isPressed;
+        // At second click
         } else {
+            // Remove the controls attribute
             audioElement.attr("controls", false);
+            // Change isPressed back to false
             isPressed = false;
+            // Switch the icon back to the play-circle
             $(".audioBtn").attr("uk-icon", "icon: play-circle; ratio: 2");
             return isPressed;
         }
     });
 
-
-    $("#heroForm").on("submit", function (e) { // Change to target form and submit event when HTML is ready
+    // Listen to a submit event on the heroForm
+    $("#heroForm").on("submit", function (e) {
         e.preventDefault();
+        // Render superhero data
+        renderHeroData();
+    })
 
+    // Listen to a click event on the heroForm if the icon is clicked
+    $("#heroForm").on("click", "#searchIcon", function (e) {
+        e.preventDefault();
+        // Render superhero data
+        renderHeroData();
+    })
+
+    // Create a function to render superhero data
+    function renderHeroData() {
         // Clear heroInfo div
         $("#heroInfo").empty();
 
@@ -116,7 +127,7 @@ $(document).ready(function () {
                 var combat = hero.powerstats.combat;
                 // Create a button for each result
                 var sliderItemLi = $("<li>").addClass("uk-padding uk-padding-remove-left uk-padding-remove-right");
-                var heroPageNumSpan = $("<span>").addClass("heroPageNum").attr({"data-indexBtn": i + 1, "data-nameBtn": name});
+                var heroPageNumSpan = $("<span>").addClass("heroPageNum").attr({ "data-indexBtn": i + 1, "data-nameBtn": name });
                 var userIconSpan = $("<span>").addClass("userIcon").attr("uk-icon", "user");
                 // Create divs and add classes
                 var heroResultContainer = $("<div>").addClass("heroResult uk-width-1-1").attr({ "data-index": i + 1, "data-name": name });
@@ -172,7 +183,6 @@ $(document).ready(function () {
                 durabilityDiv.html("<strong>Durability: </strong>" + durability);
                 powerDiv.html("<strong>Power: </strong>" + power);
                 combatDiv.html("<strong>Combat: </strong>" + combat);
-
                 // Append divs
                 heroPageNumsDiv.append(sliderItemLi.append(heroPageNumSpan.prepend(userIconSpan)));
                 powerStatsDiv.append(powerStatsHeading).append(intelligenceDiv).append(strengthDiv).append(speedDiv).append(durabilityDiv).append(powerDiv).append(combatDiv);
@@ -196,31 +206,27 @@ $(document).ready(function () {
                 heroPaginationDiv.css("display", "none");
             }
 
+            // Render wallpaper images
             showWallpapers();
 
         })
 
         // Clear the input value
         $("#heroSearchInput").val("");
-    })
+    }
 
+    // Create function to render wallpaper images
     function showWallpapers() {
-        // Cynthia
-        // WHEN I scroll down even more
-        // THEN I am presented with images of wallpapers related to the superhero
-        // Get data from image api
-        // Render data on DOM
-
+        // Take the text of the active button
         var dataName = $(".active").text();
         var AccessKey = "JINdia7koUjq_pI2PJaRPDBiIJfg9sGoHF4a3t_2olw";
         var queryUrl = "https://api.unsplash.com/search/photos/?client_id=" + AccessKey + "&query=" + dataName;
-
+        // Logic to solve CORS issue
         jQuery.ajaxPrefilter(function (options) {
             if (options.crossDomain && jQuery.support.cors) {
                 options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
             }
         });
-
         // Ajax  GET request
         $.ajax({
             url: queryUrl,
@@ -229,12 +235,12 @@ $(document).ready(function () {
         }).then(function (response) {
 
             var result = response.results;
-            // console.log(result);
-            // Create divs here
+            // Create divs
             var imageContainer = $("<div>").addClass("imgContainer uk-width-1-1 uk-padding-remove uk-margin-remove-top");
             var headingTitle = $('<div>').addClass("infoHeading uk-text-bold uk-text-muted uk-padding-small").text("Wallpapers");
-
+            // If no image results
             if (result == 0) {
+                // Then present an appropriate message
                 imageContainer.append($("<p>").addClass("uk-padding uk-padding-remove-top uk-margin-remove-top").text("Sorry! No images found for " + dataName));
             } else {
                 // Loop through image results array, limit to 4
@@ -242,18 +248,20 @@ $(document).ready(function () {
                     // Get image url and alt descriptions for each result
                     var imageURL = result[i].urls.small;
                     var altDescription = result[i]["alt_description"];
-                    // Crate image divs
+                    // Crate image element
                     var img = $('<img>').attr({ src: imageURL, alt: altDescription, width: "100%" });
-                    //append img uk
+                    // Append img to the container
                     imageContainer.append(img);
                 }
             }
+            // Prepend the heading to the container
             imageContainer.prepend(headingTitle);
+            // Append the container to the heroInfo section
             $("#heroInfo").append(imageContainer);
         });
     }
 
-    // Listen for an event on the heroPageNum spans
+    // Listen for a click event on the heroPageNum spans
     $(document).on("click", ".heroPageNum", function () {
         // If clicked, remove active class from other spans and add it to clicked span
         $(".heroPageNum").removeClass("active");
@@ -269,12 +277,4 @@ $(document).ready(function () {
         // Show wallpaper images result
         showWallpapers();
     })
-
-    // Listen for an event on the search icon
-    $("#searchIcon").on("click", function (e) {
-        e.preventDefault();
-
-        // Render data
-    })
-
 })
