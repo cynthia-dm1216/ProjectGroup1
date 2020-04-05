@@ -49,9 +49,10 @@ Interactive Mockup: [Interactive Mockup](https://xd.adobe.com/view/192bda5d-598a
 [Superhero Background & Backgrounds](https://cynthia-dm1216.github.io/ProjectGroup1/)
 
 ## Screenshots
-![Home Screen](linkHere)
-![Superhero Information](linkHere)
-![Wallpapers from search](linkHere)
+![Home Screen](./assets/images/screenshot-home.jpg)
+![Superhero Information](./assets/images/screenshot-superheroBio.jpg)
+![Superhero Information 2](./assets/images/screenshot-superheroBio2.jpg)
+![Wallpapers from search](./assets/images/screenshot-wallpapers.jpg)
 
 ## APIs Used
 * [Superhero API](https://superheroapi.com/index.html)

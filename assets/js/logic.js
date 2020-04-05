@@ -86,13 +86,13 @@ $(document).ready(function () {
         // Get input value
         var queryName = $("#heroSearchInput").val().trim();
         var accessToken = "2839209799538545";
-        var queryURL = "https://superheroapi.com/api/" + accessToken + "/search/" + queryName;
+        var queryURL = "https://cors-anywhere.herokuapp.com/https://superheroapi.com/api/" + accessToken + "/search/" + queryName;
         // Logic to solve CORS issue
-        jQuery.ajaxPrefilter(function (options) {
-            if (options.crossDomain && jQuery.support.cors) {
-                options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
-            }
-        });
+        // jQuery.ajaxPrefilter(function (options) {
+        //     if (options.crossDomain && jQuery.support.cors) {
+        //         options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
+        //     }
+        // });
         // Request from superhero api
         $.ajax({
             url: queryURL,
@@ -224,13 +224,13 @@ $(document).ready(function () {
         // Take the text of the active button
         var dataName = $(".active").text();
         var AccessKey = "JINdia7koUjq_pI2PJaRPDBiIJfg9sGoHF4a3t_2olw";
-        var queryUrl = "https://api.unsplash.com/search/photos/?client_id=" + AccessKey + "&query=" + dataName;
+        var queryUrl = "https://cors-anywhere.herokuapp.com/https://api.unsplash.com/search/photos/?client_id=" + AccessKey + "&query=" + dataName;
         // Logic to solve CORS issue
-        jQuery.ajaxPrefilter(function (options) {
-            if (options.crossDomain && jQuery.support.cors) {
-                options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
-            }
-        });
+        // jQuery.ajaxPrefilter(function (options) {
+        //     if (options.crossDomain && jQuery.support.cors) {
+        //         options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
+        //     }
+        // });
         // Ajax  GET request
         $.ajax({
             url: queryUrl,
